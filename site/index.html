@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Секретар — записи та звіти служіння для збору</title>
+<meta name="description" content="Офлайн-програма для записів і звітів служіння збору. Зашифрована база на вашому комп'ютері, імпорт з TSWIN, 33 звіти. Congregation service records and reports.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://sekretar.cykor.net/">
+<meta property="og:title" content="Секретар / Sekretar">
+<meta property="og:description" content="Записи та звіти служіння для збору. Працює повністю офлайн.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sekretar.cykor.net/">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:locale:alternate" content="en_GB">
+<style>
+  :root {
+    --deep: #1f5670;
+    --mid: #3480a6;
+    --ink: #16242c;
+    --body: #40525c;
+    --muted: #6b7f8a;
+    --bg: #f4f6f8;
+    --panel: #ffffff;
+    --line: #dde5ea;
+    --soft: #eef3f6;
+    --accent-ink: #ffffff;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(31, 86, 112, .06), 0 8px 24px rgba(31, 86, 112, .07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --deep: #7fc0dd;
+      --mid: #5aa8cd;
+      --ink: #eaf2f6;
+      --body: #b9c9d2;
+      --muted: #8b9ea9;
+      --bg: #101a20;
+      --panel: #16232b;
+      --line: #263841;
+      --soft: #1b2b34;
+      --accent-ink: #0d181e;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .25);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0; font-weight: 640; }
+  p { margin: 0; }
+  a { color: var(--deep); }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+
+  header.bar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 640; color: var(--ink); text-decoration: none; }
+  .brand img { width: 28px; height: 28px; border-radius: 7px; }
+  .bar nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .bar nav a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 8px; }
+  .bar nav a:hover { color: var(--ink); background: var(--soft); }
+
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; background: var(--panel); }
+  .lang button {
+    font: inherit; font-size: 13px; padding: 5px 11px; border: 0; cursor: pointer;
+    background: transparent; color: var(--muted);
+  }
+  .lang button[aria-pressed="true"] { background: var(--deep); color: var(--accent-ink); }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: 0; }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+
+  /* Hero */
+  .hero { padding: 76px 0 64px; }
+  .hero h1 { font-size: clamp(34px, 6vw, 50px); letter-spacing: -.02em; }
+  .hero .tagline { font-size: clamp(17px, 2.4vw, 20px); margin-top: 14px; max-width: 34em; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .pill {
+    font-size: 13px; padding: 5px 12px; border-radius: 999px;
+    background: var(--soft); color: var(--deep); border: 1px solid var(--line);
+  }
+
+  .download { margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--deep); color: var(--accent-ink); text-decoration: none;
+    padding: 13px 22px; border-radius: 11px; font-weight: 600; font-size: 16px;
+    box-shadow: var(--shadow);
+  }
+  .btn:hover { background: var(--mid); }
+  .btn[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+  .btn svg { width: 18px; height: 18px; }
+  .btn small { font-weight: 400; opacity: .8; }
+  .release-line { font-size: 14px; color: var(--muted); }
+
+  .others { margin-top: 26px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .other {
+    display: flex; align-items: baseline; gap: 8px; justify-content: space-between;
+    padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--panel); text-decoration: none; color: var(--ink); font-size: 14px;
+  }
+  .other:hover { border-color: var(--mid); }
+  .other .size { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .other[hidden] { display: none; }
+
+  /* Cards */
+  .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 26px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .card h3 { font-size: 16px; margin-bottom: 7px; }
+  .card p { font-size: 14.5px; }
+
+  /* Steps */
+  ol.steps { list-style: none; counter-reset: s; margin: 26px 0 0; padding: 0; display: grid; gap: 14px; }
+  ol.steps li {
+    counter-increment: s; position: relative; padding: 18px 20px 18px 60px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 18px; top: 17px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--deep); color: var(--accent-ink);
+    font-size: 14px; font-weight: 640; display: grid; place-items: center;
+  }
+  ol.steps h3 { font-size: 15.5px; margin-bottom: 5px; }
+  ol.steps p { font-size: 14.5px; }
+
+  .note {
+    margin-top: 22px; padding: 16px 18px; border-radius: var(--radius);
+    background: var(--soft); border: 1px solid var(--line); font-size: 14.5px;
+  }
+  .note h3 { font-size: 14.5px; margin-bottom: 6px; }
+  .note + .note { margin-top: 12px; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .9em; background: var(--bg); border: 1px solid var(--line);
+    border-radius: 6px; padding: 1px 5px;
+  }
+
+  /* What's new */
+  .news { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-top: 24px; }
+  .news header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .news h3 { font-size: 20px; }
+  .news time { font-size: 14px; color: var(--muted); }
+  .news-body { font-size: 15px; }
+  .news-body h2, .news-body h3 { font-size: 15px; margin: 16px 0 6px; }
+  .news-body ul { margin: 8px 0; padding-left: 20px; }
+  .news-body li { margin: 4px 0; }
+  .news-body p { margin: 8px 0; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 60px; font-size: 14px; color: var(--muted); }
+  footer p + p { margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icon.svg" alt=""><span>Секретар</span></a>
+    <nav>
+      <a href="#how" data-uk="Як користуватися" data-en="How to use">Як користуватися</a>
+      <a href="#new" data-uk="Що нового" data-en="What's new">Що нового</a>
+      <a href="https://github.com/isalo/sekretar-app">GitHub</a>
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="uk" aria-pressed="true">УКР</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 data-uk="Секретар" data-en="Sekretar">Секретар</h1>
+      <p class="tagline"
+         data-uk="Записи та звіти служіння для збору. Уся інформація зберігається зашифрованою в одному файлі на вашому комп'ютері — без хмари, без облікового запису, без інтернету."
+         data-en="Congregation service records and reports. Everything lives encrypted in a single file on your own computer — no cloud, no account, no internet.">Записи та звіти служіння для збору. Уся інформація зберігається зашифрованою в одному файлі на вашому комп'ютері — без хмари, без облікового запису, без інтернету.</p>
+
+      <div class="pills">
+        <span class="pill" data-uk="Працює повністю офлайн" data-en="Fully offline">Працює повністю офлайн</span>
+        <span class="pill" data-uk="Зашифрована база" data-en="Encrypted database">Зашифрована база</span>
+        <span class="pill" data-uk="Імпорт з TSWIN" data-en="Imports from TSWIN">Імпорт з TSWIN</span>
+        <span class="pill" data-uk="Українська та англійська" data-en="Ukrainian and English">Українська та англійська</span>
+      </div>
+
+      <div class="download">
+        <a class="btn" id="primary-download" href="https://github.com/isalo/sekretar-app/releases" aria-disabled="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
+          </svg>
+          <span id="primary-label" data-uk="Завантажити" data-en="Download">Завантажити</span>
+        </a>
+        <span class="release-line" id="release-line"
+              data-uk="Перевіряємо останній випуск…" data-en="Checking the latest release…">Перевіряємо останній випуск…</span>
+      </div>
+
+      <div class="others" id="others"></div>
+    </div>
+  </section>
+
+  <section id="what">
+    <div class="wrap">
+      <p class="eyebrow" data-uk="Що це" data-en="What it is">Що це</p>
+      <h2 data-uk="Заміна TSWIN, яка нікуди не надсилає ваші дані"
+          data-en="A TSWIN replacement that sends your data nowhere">Заміна TSWIN, яка нікуди не надсилає ваші дані</h2>
+      <div class="cards">
+        <div class="card">
+          <h3 data-uk="Вісники та групи" data-en="Publishers and groups">Вісники та групи</h3>
+          <p data-uk="Картки вісника збору, групи служіння, призначення та родинні зв'язки. Кожна зміна має дату, тому переведення в іншу групу не стирає історію."
+             data-en="Person records, field service groups, appointments and family links. Every change is dated, so moving someone to another group does not erase the history.">Картки вісника збору, групи служіння, призначення та родинні зв'язки. Кожна зміна має дату, тому переведення в іншу групу не стирає історію.</p>
+        </div>
+        <div class="card">
+          <h3 data-uk="Звіти за місяць" data-en="Monthly reports">Звіти за місяць</h3>
+          <p data-uk="Внесення звітів і відвідування зустрічей за місяць, з підсумками за службовий рік — з 1 вересня до 31 серпня."
+             data-en="Monthly publisher reports and meeting attendance, totalled over the service year — 1 September to 31 August.">Внесення звітів і відвідування зустрічей за місяць, з підсумками за службовий рік — з 1 вересня до 31 серпня.</p>
+        </div>
+        <div class="card">
+          <h3 data-uk="33 звіти і бланки" data-en="33 reports and forms">33 звіти і бланки</h3>
+          <p data-uk="Перегляд на екрані, друк, PDF, CSV і TSV. Офіційні бланки S-21 і S-88 друкуються так, як виглядають на папері."
+             data-en="On-screen preview, printing, PDF, CSV and TSV. The official S-21 and S-88 forms print the way they look on paper.">Перегляд на екрані, друк, PDF, CSV і TSV. Офіційні бланки S-21 і S-88 друкуються так, як виглядають на папері.</p>
+        </div>
+        <div class="card">
+          <h3 data-uk="Імпорт з TSWIN" data-en="TSWIN import">Імпорт з TSWIN</h3>
+          <p data-uk="Місячний CSV і XML-експорт. Програма показує, що саме буде записано, і лише потім записує — однією операцією."
+             data-en="The monthly CSV and the XML export. You see exactly what will be written before anything is written, and then it lands in one operation.">Місячний CSV і XML-експорт. Програма показує, що саме буде записано, і лише потім записує — однією операцією.</p>
+        </div>
+        <div class="card">
+          <h3 data-uk="Резервні копії" data-en="Backups">Резервні копії</h3>
+          <p data-uk="Копія зашифрована тим самим ключем, що й основний файл. Відновлення не чіпає робочу базу, поки пароль не відкриє копію."
+             data-en="A backup carries the same encryption as the live file. A restore does not touch your database until the passphrase has opened the backup.">Копія зашифрована тим самим ключем, що й основний файл. Відновлення не чіпає робочу базу, поки пароль не відкриє копію.</p>
+        </div>
+        <div class="card">
+          <h3 data-uk="Пароль знає лише секретар" data-en="Only you hold the passphrase">Пароль знає лише секретар</h3>
+          <p data-uk="Пароль ніде не зберігається і не може бути відновлений. Це і є захист — і це означає, що втрачений пароль означає втрачену базу."
+             data-en="The passphrase is never stored and cannot be recovered. That is the protection — and it means a lost passphrase is a lost database.">Пароль ніде не зберігається і не може бути відновлений. Це і є захист — і це означає, що втрачений пароль означає втрачену базу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="eyebrow" data-uk="Як користуватися" data-en="How to use">Як користуватися</p>
+      <h2 data-uk="Від завантаження до першого звіту" data-en="From download to your first report">Від завантаження до першого звіту</h2>
+
+      <ol class="steps">
+        <li>
+          <h3 data-uk="Установіть програму" data-en="Install the app">Установіть програму</h3>
+          <p data-uk="Завантажте файл для своєї системи вище. На Windows запустіть інсталятор, на macOS перетягніть програму в «Програми», на Linux зробіть файл AppImage виконуваним або встановіть пакет .deb."
+             data-en="Download the file for your system above. On Windows run the installer, on macOS drag the app into Applications, on Linux make the AppImage executable or install the .deb package.">Завантажте файл для своєї системи вище. На Windows запустіть інсталятор, на macOS перетягніть програму в «Програми», на Linux зробіть файл AppImage виконуваним або встановіть пакет .deb.</p>
+        </li>
+        <li>
+          <h3 data-uk="Створіть базу даних і пароль" data-en="Create the database and a passphrase">Створіть базу даних і пароль</h3>
+          <p data-uk="При першому запуску виберіть «Створити базу даних», вкажіть, де зберігати файл, і задайте пароль щонайменше з 8 символів. Запишіть його там, де зберігаєте інші важливі документи: відновити його неможливо."
+             data-en="On first launch choose “Create database”, pick where the file should live and set a passphrase of at least 8 characters. Write it down where you keep other important documents — it cannot be recovered.">При першому запуску виберіть «Створити базу даних», вкажіть, де зберігати файл, і задайте пароль щонайменше з 8 символів. Запишіть його там, де зберігаєте інші важливі документи: відновити його неможливо.</p>
+        </li>
+        <li>
+          <h3 data-uk="Перенесіть дані з TSWIN" data-en="Bring your TSWIN data across">Перенесіть дані з TSWIN</h3>
+          <p data-uk="Відкрийте «Імпорт» і виберіть XML-експорт або місячний CSV з TSWIN. Програма розбере файл, покаже збіги, конфлікти та підсумки — і запише лише після вашого підтвердження."
+             data-en="Open “Imports” and pick a TSWIN XML export or a monthly CSV. The file is parsed, matches and conflicts are shown with the totals, and nothing is written until you confirm.">Відкрийте «Імпорт» і виберіть XML-експорт або місячний CSV з TSWIN. Програма розбере файл, покаже збіги, конфлікти та підсумки — і запише лише після вашого підтвердження.</p>
+        </li>
+        <li>
+          <h3 data-uk="Ведіть місяць" data-en="Work the month">Ведіть місяць</h3>
+          <p data-uk="Протягом місяця вносьте відвідування зустрічей і звіти вісників. Підсумки за групами та за службовим роком рахуються самі."
+             data-en="Through the month, enter meeting attendance and publisher reports. Group and service-year totals follow on their own.">Протягом місяця вносьте відвідування зустрічей і звіти публікаційників. Підсумки за групами та за службовим роком рахуються самі.</p>
+        </li>
+        <li>
+          <h3 data-uk="Друкуйте звіти та робіть копії" data-en="Print reports and take backups">Друкуйте звіти та робіть копії</h3>
+          <p data-uk="У розділі «Звіти» виберіть потрібний звіт, період — і друкуйте, зберігайте в PDF або вивантажуйте в CSV. Час від часу створюйте резервну копію та тримайте її окремо від комп'ютера."
+             data-en="In “Reports” choose the report and the period, then print it, save a PDF or export CSV. Take a backup now and then and keep it somewhere other than the computer itself.">У розділі «Звіти» виберіть потрібний звіт, період — і друкуйте, зберігайте в PDF або вивантажуйте в CSV. Час від часу створюйте резервну копію та тримайте її окремо від комп'ютера.</p>
+        </li>
+      </ol>
+
+      <div class="note">
+        <h3 data-uk="macOS: «програму завантажено з інтернету»" data-en="macOS: “downloaded from the internet”">macOS: «програму завантажено з інтернету»</h3>
+        <p data-uk="Збірки не підписані сертифікатом Apple, тому першого разу відкрийте програму через праву кнопку миші → «Відкрити» → «Відкрити». Якщо macOS усе одно відмовляє, виконайте в Терміналі: "
+           data-en="The builds are not signed with an Apple certificate, so the first time open the app with right-click → Open → Open. If macOS still refuses, run this in Terminal: ">Збірки не підписані сертифікатом Apple, тому першого разу відкрийте програму через праву кнопку миші → «Відкрити» → «Відкрити». Якщо macOS усе одно відмовляє, виконайте в Терміналі: </p>
+        <p><code>xattr -dr com.apple.quarantine /Applications/Sekretar.app</code></p>
+      </div>
+
+      <div class="note">
+        <h3 data-uk="Windows: попередження SmartScreen" data-en="Windows: the SmartScreen warning">Windows: попередження SmartScreen</h3>
+        <p data-uk="Інсталятор також не підписаний, тому Windows покаже синє вікно. Натисніть «Докладніше» → «Виконати в будь-якому разі»."
+           data-en="The installer is unsigned too, so Windows shows a blue dialog. Choose “More info” → “Run anyway”.">Інсталятор також не підписаний, тому Windows покаже синє вікно. Натисніть «Докладніше» → «Виконати в будь-якому разі».</p>
+      </div>
+
+      <div class="note">
+        <h3 data-uk="Куди дівається ваша інформація" data-en="Where your data goes">Куди дівається ваша інформація</h3>
+        <p data-uk="Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це."
+           data-en="Nowhere. The app has no network access; data leaves the encrypted file only when you export a CSV or a PDF yourself — and it warns you before every export.">Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="new">
+    <div class="wrap">
+      <p class="eyebrow" data-uk="Що нового" data-en="What's new">Що нового</p>
+      <h2 data-uk="Останній випуск" data-en="The latest release">Останній випуск</h2>
+      <div class="news" id="news">
+        <header>
+          <h3 id="news-version" data-uk="Завантажуємо…" data-en="Loading…">Завантажуємо…</h3>
+          <time id="news-date"></time>
+        </header>
+        <div class="news-body" id="news-body"></div>
+      </div>
+      <p style="margin-top:16px;font-size:14px">
+        <a href="https://github.com/isalo/sekretar-app/releases"
+           data-uk="Усі випуски та їхні зміни →" data-en="All releases and their changes →">Усі випуски та їхні зміни →</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p data-uk="Секретар — безкоштовна програма для збору."
+       data-en="Sekretar is free to use for congregation service.">Секретар — безкоштовна програма для збору.</p>
+    <p><a href="https://github.com/isalo/sekretar-app" data-uk="Завантаження та документація на GitHub" data-en="Downloads and documentation on GitHub">Завантаження та документація на GitHub</a></p>
+    <p data-uk="Ця сторінка не збирає статистику і не встановлює файли cookie."
+       data-en="This page collects no analytics and sets no cookies.">Ця сторінка не збирає статистику і не встановлює файли cookie.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var REPO = 'isalo/sekretar-app';
+  var RELEASES = 'https://github.com/' + REPO + '/releases';
+
+  /* ---- language ---------------------------------------------------- */
+  var lang = 'uk';
+  var render = function () {};  // replaced once the release section is wired up
+  try { lang = localStorage.getItem('sekretar-lang') || 'uk'; } catch (e) {}
+  if (lang !== 'en') lang = 'uk';
+
+  function applyLang(next) {
+    lang = next;
+    document.documentElement.lang = next;
+    var nodes = document.querySelectorAll('[data-uk][data-en]');
+    for (var i = 0; i < nodes.length; i++) {
+      var text = nodes[i].getAttribute('data-' + next);
+      if (text !== null) nodes[i].textContent = text;
+    }
+    var buttons = document.querySelectorAll('.lang button');
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].setAttribute('aria-pressed', String(buttons[j].dataset.lang === next));
+    }
+    try { localStorage.setItem('sekretar-lang', next); } catch (e) {}
+    render();
+  }
+
+  document.querySelector('.lang').addEventListener('click', function (event) {
+    var button = event.target.closest('button[data-lang]');
+    if (button) applyLang(button.dataset.lang);
+  });
+  applyLang(lang);
+
+  function t(uk, en) { return lang === 'en' ? en : uk; }
+
+  /* ---- which platform is this ------------------------------------- */
+  // Asset names come from electron-builder's artifactName:
+  // Sekretar-<version>-<os>-<arch>.<ext>
+  var PLATFORMS = [
+    { id: 'mac-arm', uk: 'macOS (Apple Silicon)', en: 'macOS (Apple Silicon)',
+      match: function (n) { return /mac/.test(n) && /arm64/.test(n) && /\.dmg$/.test(n); } },
+    { id: 'mac-x64', uk: 'macOS (Intel)', en: 'macOS (Intel)',
+      match: function (n) { return /mac/.test(n) && /x64/.test(n) && /\.dmg$/.test(n); } },
+    { id: 'win', uk: 'Windows', en: 'Windows',
+      match: function (n) { return /\.exe$/.test(n); } },
+    { id: 'linux-appimage', uk: 'Linux (AppImage)', en: 'Linux (AppImage)',
+      match: function (n) { return /\.appimage$/.test(n); } },
+    { id: 'linux-deb', uk: 'Linux (.deb)', en: 'Linux (.deb)',
+      match: function (n) { return /\.deb$/.test(n); } }
+  ];
+
+  function detect() {
+    var ua = navigator.userAgent;
+    var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+    if (/Win/i.test(platform) || /Windows/i.test(ua)) return 'win';
+    if (/Linux/i.test(platform) && !/Android/i.test(ua)) return 'linux-appimage';
+    if (/Mac/i.test(platform) || /Mac OS X/i.test(ua)) {
+      // Apple Silicon Macs report the same platform string as Intel ones; the
+      // renderer name is the only hint available without asking for permission.
+      var canvas = document.createElement('canvas');
+      var gl = canvas.getContext('webgl');
+      var info = gl && gl.getExtension('WEBGL_debug_renderer_info');
+      var renderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+      return /Apple (M\d|GPU)/i.test(renderer) ? 'mac-arm' : 'mac-x64';
+    }
+    return null;
+  }
+
+  function size(bytes) {
+    if (!bytes) return '';
+    return (bytes / (1024 * 1024)).toFixed(0) + ' MB';
+  }
+
+  /* ---- release notes ----------------------------------------------- */
+  // A small subset of Markdown: enough for headings, lists, links, emphasis
+  // and code, which is all release notes ever hold here.
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function inline(s) {
+    return escapeHtml(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" rel="noopener">$1</a>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[\s(])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  }
+
+  function markdown(src) {
+    var out = [];
+    var list = null;
+    var lines = String(src || '').replace(/\r/g, '').split('\n');
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i];
+      var bullet = line.match(/^\s*[-*]\s+(.*)$/);
+      if (bullet) {
+        if (!list) list = [];
+        list.push(inline(bullet[1]));
+        continue;
+      }
+      // A wrapped bullet continues the item above it rather than starting a paragraph.
+      if (list && /^\s+\S/.test(line)) {
+        list[list.length - 1] += ' ' + inline(line.trim());
+        continue;
+      }
+      if (list) {
+        out.push('<ul><li>' + list.join('</li><li>') + '</li></ul>');
+        list = null;
+      }
+      var heading = line.match(/^(#{1,6})\s+(.*)$/);
+      if (heading) { out.push('<h3>' + inline(heading[2]) + '</h3>'); continue; }
+      if (line.trim()) out.push('<p>' + inline(line.trim()) + '</p>');
+    }
+    if (list) out.push('<ul><li>' + list.join('</li><li>') + '</li></ul>');
+    return out.join('');
+  }
+
+  /* ---- fill the page ----------------------------------------------- */
+  var primary = document.getElementById('primary-download');
+  var primaryLabel = document.getElementById('primary-label');
+  var releaseLine = document.getElementById('release-line');
+  var others = document.getElementById('others');
+  var state = null;  // { release, assets by platform id } once the API answers
+
+  function label(platform) { return platform[lang === 'en' ? 'en' : 'uk']; }
+
+  function formatDate(iso) {
+    return new Date(iso).toLocaleDateString(lang === 'en' ? 'en-GB' : 'uk-UA',
+      { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+
+  function renderRelease() {
+    if (!state) return;
+    var release = state.release;
+    var found = state.found;
+    var mine = state.mine;
+    var version = release.tag_name || release.name || '';
+
+    releaseLine.textContent = t('Версія ', 'Version ') + version +
+      (release.published_at ? ' · ' + formatDate(release.published_at) : '');
+
+    var chosen = mine && found[mine];
+    if (chosen) {
+      primary.href = chosen.asset.browser_download_url;
+      primaryLabel.textContent = t('Завантажити для ', 'Download for ') + label(chosen.platform);
+    } else {
+      primary.href = RELEASES;
+      primaryLabel.textContent = t('Усі завантаження', 'All downloads');
+    }
+
+    others.textContent = '';
+    PLATFORMS.forEach(function (platform) {
+      var entry = found[platform.id];
+      if (!entry || platform.id === mine) return;
+      var link = document.createElement('a');
+      link.className = 'other';
+      link.href = entry.asset.browser_download_url;
+      var name = document.createElement('span');
+      name.textContent = label(platform);
+      var bytes = document.createElement('span');
+      bytes.className = 'size';
+      bytes.textContent = size(entry.asset.size);
+      link.appendChild(name);
+      link.appendChild(bytes);
+      others.appendChild(link);
+    });
+
+    document.getElementById('news-version').textContent = version;
+    var time = document.getElementById('news-date');
+    if (release.published_at) {
+      time.dateTime = release.published_at;
+      time.textContent = formatDate(release.published_at);
+    }
+    document.getElementById('news-body').innerHTML =
+      markdown(release.body) || '<p>' + t('Опис не додано.', 'No notes were written for this release.') + '</p>';
+  }
+
+  function renderMissing() {
+    releaseLine.textContent = state && state.error
+      ? t('Не вдалося отримати останній випуск.', 'Could not read the latest release.')
+      : t('Випусків ще немає.', 'No releases yet.');
+    primary.href = RELEASES;
+    primaryLabel.textContent = t('Відкрити сторінку випусків', 'Open the releases page');
+    others.textContent = '';
+    document.getElementById('news-version').textContent = t('Випусків ще немає', 'No releases yet');
+    document.getElementById('news-body').innerHTML =
+      '<p>' + t('Щойно вийде перша збірка, вона з’явиться тут разом зі списком змін.',
+                'As soon as the first build is published it will appear here with its list of changes.') + '</p>';
+  }
+
+  render = function () { if (state && state.release) renderRelease(); else if (state) renderMissing(); };
+
+  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', {
+    headers: { Accept: 'application/vnd.github+json' }
+  })
+    .then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    })
+    .then(function (release) {
+      var assets = release.assets || [];
+      var found = {};
+      PLATFORMS.forEach(function (platform) {
+        for (var i = 0; i < assets.length; i++) {
+          if (platform.match(assets[i].name.toLowerCase())) {
+            found[platform.id] = { platform: platform, asset: assets[i] };
+            return;
+          }
+        }
+      });
+      state = { release: release, found: found, mine: detect() };
+      render();
+    })
+    .catch(function () {
+      state = { error: true };
+      render();
+    });
+
+})();
+</script>
+</body>
+</html>

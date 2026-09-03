@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3480a6"/>
+      <stop offset="1" stop-color="#1f5670"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef3f6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="228" fill="url(#bg)"/>
+
+  <!-- service record card -->
+  <g transform="translate(0,-14)">
+    <rect x="236" y="196" width="552" height="632" rx="44" fill="url(#card)"/>
+    <rect x="236" y="196" width="552" height="112" rx="44" fill="#dbe6ec"/>
+    <rect x="236" y="264" width="552" height="44" fill="#dbe6ec"/>
+
+    <!-- ruled rows -->
+    <g fill="#9fb3bf">
+      <rect x="304" y="372" width="300" height="34" rx="17"/>
+      <rect x="304" y="466" width="416" height="34" rx="17"/>
+      <rect x="304" y="560" width="360" height="34" rx="17"/>
+      <rect x="304" y="654" width="238" height="34" rx="17"/>
+    </g>
+  </g>
+
+  <!-- confirmation mark -->
+  <circle cx="742" cy="742" r="176" fill="#1f5670"/>
+  <circle cx="742" cy="742" r="176" fill="none" stroke="#ffffff" stroke-width="34"/>
+  <path d="M660 744 l58 60 108 -128" fill="none" stroke="#ffffff"
+        stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

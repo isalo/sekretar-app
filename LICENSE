@@ -1,0 +1,45 @@
+Sekretar / Секретар
+Copyright (c) 2026 Ivan Salo. All rights reserved.
+
+This is proprietary software. It is provided free of charge, but it is not open
+source: the source code is not published, and the rights granted below are the
+only ones granted.
+
+PERMITTED
+
+  1. You may install and use this software, free of charge and without a limit
+     on the number of machines or the length of time, for keeping congregation
+     service records and producing reports from them.
+
+  2. You may copy and pass on the official installers, unmodified and complete,
+     including this licence, at no charge.
+
+NOT PERMITTED
+
+  3. You may not sell, rent, sublicense or charge for this software, or include
+     it in anything sold.
+
+  4. You may not modify, translate, adapt, decompile, disassemble or reverse
+     engineer the software, or attempt to derive its source code, except where
+     that restriction is void under law that applies to you.
+
+  5. You may not remove or alter this licence, the copyright notice, or any
+     identification of the software.
+
+YOUR DATA
+
+  6. The congregation records this software creates are yours. They stay on
+     your machine, in a file you choose, encrypted with a passphrase only you
+     hold. Nothing is transmitted anywhere, and the author has no access to
+     them and no ability to recover them.
+
+NO WARRANTY
+
+  7. The software is provided "as is", without warranty of any kind, express or
+     implied, including but not limited to the warranties of merchantability,
+     fitness for a particular purpose and non-infringement. The author is not
+     liable for any claim, damages or other liability arising from the software
+     or its use, including loss of or damage to data.
+
+  8. Keep your own backups. The passphrase cannot be recovered; if it is lost,
+     the data is not readable by anyone, including the author.
