@@ -1,34 +1,30 @@
-# Секретар / Sekretar
+# Sekretar
 
-**Записи та звіти служіння для збору** — *Congregation service records and reports*
+**Congregation service records and reports** — an offline desktop app for macOS, Windows and Linux.
 
-Завантаження та опис: **[sekretar.cykor.net](https://sekretar.cykor.net)**
-· Downloads and overview: **[sekretar.cykor.net](https://sekretar.cykor.net)**
+[![Latest release](https://img.shields.io/github/v/release/isalo/sekretar-app?label=release&sort=semver)](https://github.com/isalo/sekretar-app/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/isalo/sekretar-app/total?label=downloads)](https://github.com/isalo/sekretar-app/releases)
+[![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-1f5670)](https://github.com/isalo/sekretar-app/releases/latest)
+[![Offline](https://img.shields.io/badge/network%20access-none-2e7d32)](#about-this-repository)
+[![Licence](https://img.shields.io/badge/licence-free%20of%20charge%2C%20not%20open%20source-lightgrey)](LICENSE)
+[![Website](https://img.shields.io/badge/website-sekretar.cykor.net-3480a6)](https://sekretar.cykor.net)
+
+Downloads and overview: **[sekretar.cykor.net](https://sekretar.cykor.net)**
 
 ---
 
-## Українською
-
-Секретар замінює TSWIN/TSWINU. Усі дані збору зберігаються в одному зашифрованому файлі
-на вашому комп'ютері. Немає ні хмарного облікового запису, ні синхронізації, ні жодного
-звернення до мережі — програма працює з від'єднаним інтернетом.
-
-**[Завантажити останню версію](https://github.com/isalo/sekretar-app/releases/latest)**
-для macOS, Windows або Linux.
-
-Файл із записами належить вам. Він нікуди не надсилається, і ніхто, включно з автором,
-не може його прочитати або відновити втрачений пароль.
-
-## In English
-
-Sekretar is an offline desktop replacement for TSWIN/TSWINU. Every congregation record
-lives in one encrypted SQLite file on your own machine — no account, no sync, no network
-access at all.
+Every congregation record lives in one encrypted SQLite file on your own machine — no
+account, no sync, no network access at all. The interface is available in Ukrainian and
+English.
 
 **[Download the latest release](https://github.com/isalo/sekretar-app/releases/latest)**
 for macOS, Windows or Linux.
 
----
+Coming from TSWIN? The monthly CSV and the XML export both import, staged and previewed
+so you see what will change before anything is written.
+
+The record file belongs to you. It is never sent anywhere, and nobody — the author
+included — can read it or recover a lost passphrase.
 
 ## Installing
 
