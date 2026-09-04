@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Секретар — довідка</title>
+<meta name="description" content="Як користуватися Секретарем: перший запуск, перенесення з TSWIN, звіти за місяць, відвідування, бланки та резервні копії.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://sekretar.cykor.net/help">
+<meta property="og:title" content="Секретар — довідка / Sekretar help">
+<meta property="og:description" content="Як користуватися Секретарем, крок за кроком.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sekretar.cykor.net/help">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:locale:alternate" content="en_GB">
+<style>
+  :root {
+    --deep: #1f5670;
+    --mid: #3480a6;
+    --ink: #16242c;
+    --body: #40525c;
+    --muted: #6b7f8a;
+    --bg: #f4f6f8;
+    --panel: #ffffff;
+    --line: #dde5ea;
+    --soft: #eef3f6;
+    --accent-ink: #ffffff;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(31, 86, 112, .06), 0 8px 24px rgba(31, 86, 112, .07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --deep: #7fc0dd;
+      --mid: #5aa8cd;
+      --ink: #eaf2f6;
+      --body: #b9c9d2;
+      --muted: #8b9ea9;
+      --bg: #101a20;
+      --panel: #16232b;
+      --line: #263841;
+      --soft: #1b2b34;
+      --accent-ink: #0d181e;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .25);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0; font-weight: 640; }
+  p { margin: 0; }
+  a { color: var(--deep); }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+
+  header.bar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 640; color: var(--ink); text-decoration: none; }
+  .brand img { width: 28px; height: 28px; border-radius: 7px; }
+  .bar nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .bar nav a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 8px; }
+  .bar nav a:hover { color: var(--ink); background: var(--soft); }
+
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; background: var(--panel); }
+  .lang button {
+    font: inherit; font-size: 13px; padding: 5px 11px; border: 0; cursor: pointer;
+    background: transparent; color: var(--muted);
+  }
+  .lang button[aria-pressed="true"] { background: var(--deep); color: var(--accent-ink); }
+
+  .intro { padding: 56px 0 8px; }
+  .intro h1 { font-size: clamp(28px, 5vw, 40px); }
+  .intro .tagline { font-size: clamp(16px, 2.2vw, 19px); margin-top: 14px; max-width: 36em; }
+
+  /* Contents: a plain list of anchors, so the page is navigable without script. */
+  .toc { margin-top: 30px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+  .toc h2 { font-size: 14px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .toc ol { margin: 12px 0 0; padding-left: 20px; columns: 2; column-gap: 28px; font-size: 15px; }
+  @media (max-width: 620px) { .toc ol { columns: 1; } }
+  .toc li { margin: 4px 0; break-inside: avoid; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  section h2 { font-size: clamp(21px, 3.2vw, 27px); }
+  section > .wrap > p { margin-top: 14px; max-width: 42em; }
+
+  ol.steps, ul.points { margin: 18px 0 0; padding-left: 22px; max-width: 42em; }
+  ol.steps li, ul.points li { margin: 8px 0; }
+
+  figure {
+    margin: 28px 0 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: var(--shadow);
+  }
+  figure img { display: block; width: 100%; height: auto; border-radius: 7px; }
+  figcaption { font-size: 13.5px; color: var(--muted); padding: 10px 6px 2px; }
+
+  .note {
+    margin-top: 24px;
+    background: var(--soft);
+    border-left: 3px solid var(--deep);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    font-size: 15px;
+    max-width: 42em;
+  }
+  .note strong { color: var(--ink); }
+
+  .kbd {
+    font: inherit; font-size: 13px; padding: 1px 6px;
+    border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px;
+    background: var(--panel); color: var(--ink); white-space: nowrap;
+  }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 60px; font-size: 14px; color: var(--muted); }
+  footer p + p { margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="icon.svg" alt=""><span>Секретар</span></a>
+    <nav>
+      <a href="/" data-uk="Завантажити" data-en="Download">Завантажити</a>
+      <a href="https://github.com/isalo/sekretar-app">GitHub</a>
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="uk" aria-pressed="true">УКР</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div class="intro">
+  <div class="wrap">
+    <h1 data-uk="Довідка" data-en="Help">Довідка</h1>
+    <p class="tagline"
+       data-uk="Порядок роботи за місяць — від першого запуску до зданого звіту. Знімки екрана зроблено з вигаданим збором; справжніх даних тут немає."
+       data-en="The monthly routine, from first launch to a filed report. The screenshots come from an invented congregation; no real data appears here.">
+      Порядок роботи за місяць — від першого запуску до зданого звіту. Знімки екрана зроблено з вигаданим збором; справжніх даних тут немає.
+    </p>
+
+    <nav class="toc" aria-label="Contents">
+      <h2 data-uk="Зміст" data-en="Contents">Зміст</h2>
+      <ol>
+        <li><a href="#start" data-uk="Перший запуск" data-en="First launch">Перший запуск</a></li>
+        <li><a href="#import" data-uk="Перенесення з TSWIN" data-en="Moving from TSWIN">Перенесення з TSWIN</a></li>
+        <li><a href="#dashboard" data-uk="Панель" data-en="Dashboard">Панель</a></li>
+        <li><a href="#monthly" data-uk="Звіти за місяць" data-en="Monthly reports">Звіти за місяць</a></li>
+        <li><a href="#attendance" data-uk="Відвідування" data-en="Attendance">Відвідування</a></li>
+        <li><a href="#people" data-uk="Вісники" data-en="Publishers">Вісники</a></li>
+        <li><a href="#groups" data-uk="Групи" data-en="Groups">Групи</a></li>
+        <li><a href="#reports" data-uk="Звіти та бланки" data-en="Reports and forms">Звіти та бланки</a></li>
+        <li><a href="#backups" data-uk="Резервні копії" data-en="Backups">Резервні копії</a></li>
+        <li><a href="#settings" data-uk="Налаштування" data-en="Settings">Налаштування</a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section id="start">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Крок 1" data-en="Step 1">Крок 1</p>
+    <h2 data-uk="Перший запуск" data-en="First launch">Перший запуск</h2>
+    <p data-uk="Усі записи збору лежать в одному зашифрованому файлі на вашому комп'ютері. Під час першого запуску програма просить створити його та придумати пароль."
+       data-en="Every congregation record lives in one encrypted file on your own computer. On first launch the app asks you to create it and choose a passphrase.">
+      Усі записи збору лежать в одному зашифрованому файлі на вашому комп'ютері. Під час першого запуску програма просить створити його та придумати пароль.
+    </p>
+
+    <ol class="steps">
+      <li data-uk="Виберіть «Створити базу даних»." data-en="Choose “Create database”.">Виберіть «Створити базу даних».</li>
+      <li data-uk="Натисніть «Нова база…» і вкажіть, де зберегти файл. Підійде тека «Документи»."
+          data-en="Click “New database…” and say where to keep the file. Documents is a fine place.">Натисніть «Нова база…» і вкажіть, де зберегти файл. Підійде тека «Документи».</li>
+      <li data-uk="Двічі введіть пароль — щонайменше вісім символів."
+          data-en="Type the passphrase twice — at least eight characters.">Двічі введіть пароль — щонайменше вісім символів.</li>
+    </ol>
+
+    <figure>
+      <img src="help/unlock-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/unlock-uk.png" data-src-en="help/unlock-en.png"
+           alt="">
+      <figcaption data-uk="Вікно створення бази даних під час першого запуску."
+                  data-en="The create-database window on a first run.">Вікно створення бази даних під час першого запуску.</figcaption>
+    </figure>
+
+    <div class="note">
+      <p data-uk="Пароль неможливо відновити. Ніхто, включно з автором програми, не може прочитати ваш файл або скинути пароль — саме тому дані й лишаються приватними. Запишіть пароль і зберігайте окремо від комп'ютера."
+         data-en="The passphrase cannot be recovered. Nobody, the author included, can read your file or reset it — which is exactly why the data stays private. Write the passphrase down and keep it away from the computer.">
+        Пароль неможливо відновити. Ніхто, включно з автором програми, не може прочитати ваш файл або скинути пароль — саме тому дані й лишаються приватними. Запишіть пароль і зберігайте окремо від комп'ютера.
+      </p>
+    </div>
+
+    <p style="margin-top:22px"
+       data-uk="Надалі програма відкриватиметься цим самим вікном: файл уже вибрано, треба лише ввести пароль. Кнопка «Заблокувати» внизу ліворуч закриває базу, не виходячи з програми."
+       data-en="From then on the app opens with the same window: the file is already chosen and only the passphrase is needed. The “Lock” button at the bottom left closes the database without quitting.">
+      Надалі програма відкриватиметься цим самим вікном: файл уже вибрано, треба лише ввести пароль. Кнопка «Заблокувати» внизу ліворуч закриває базу, не виходячи з програми.
+    </p>
+  </div>
+</section>
+
+<section id="import">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Крок 2" data-en="Step 2">Крок 2</p>
+    <h2 data-uk="Перенесення з TSWIN" data-en="Moving from TSWIN">Перенесення з TSWIN</h2>
+    <p data-uk="Якщо збір вів записи в TSWIN або TSWINU, не треба вводити нічого вручну. Програма читає експорт XML (вісники, групи та історія звітів) і місячні файли CSV."
+       data-en="If the congregation kept its records in TSWIN or TSWINU, nothing has to be typed in by hand. The app reads the XML export — publishers, groups and the history of reports — and the monthly CSV files.">
+      Якщо збір вів записи в TSWIN або TSWINU, не треба вводити нічого вручну. Програма читає експорт XML (вісники, групи та історія звітів) і місячні файли CSV.
+    </p>
+
+    <ol class="steps">
+      <li data-uk="Відкрийте «Імпорт» і виберіть файл." data-en="Open “Import” and choose the file.">Відкрийте «Імпорт» і виберіть файл.</li>
+      <li data-uk="Перегляньте, що саме буде додано: скільки нових осіб, скільки звітів, які місяці."
+          data-en="Look over what will be added: how many new people, how many reports, which months.">Перегляньте, що саме буде додано: скільки нових осіб, скільки звітів, які місяці.</li>
+      <li data-uk="Якщо все правильно — підтвердьте. До цього моменту в базі не змінюється нічого."
+          data-en="If it looks right, confirm. Until that moment nothing in the database has changed.">Якщо все правильно — підтвердьте. До цього моменту в базі не змінюється нічого.</li>
+    </ol>
+
+    <figure>
+      <img src="help/imports-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/imports-uk.png" data-src-en="help/imports-en.png"
+           alt="">
+      <figcaption data-uk="Сторінка імпорту: файл спершу розбирається й показується, і лише потім записується."
+                  data-en="The import page: a file is parsed and shown first, and only then written.">Сторінка імпорту: файл спершу розбирається й показується, і лише потім записується.</figcaption>
+    </figure>
+
+    <div class="note">
+      <p data-uk="Якщо ім'я з файлу підходить до кількох осіб у базі, програма не вгадує — вона позначає рядок як конфлікт і чекає на ваше рішення. Файл, який не вдається прочитати надійно, буде відхилено з поясненням, а не імпортовано наполовину."
+         data-en="When a name in the file matches several people, the app does not guess — it marks the row as a conflict and waits for you. A file it cannot read reliably is refused with an explanation rather than half-imported.">
+        Якщо ім'я з файлу підходить до кількох осіб у базі, програма не вгадує — вона позначає рядок як конфлікт і чекає на ваше рішення. Файл, який не вдається прочитати надійно, буде відхилено з поясненням, а не імпортовано наполовину.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month">Щомісяця</p>
+    <h2 data-uk="Панель" data-en="Dashboard">Панель</h2>
+    <p data-uk="Панель показує стан звітного місяця: скільки вісників активні, скільки звітів здано, скільки бракує. Місяць угорі праворуч можна перемкнути, щоб подивитися попередні."
+       data-en="The dashboard shows the state of the reporting month: how many publishers are active, how many reports are in, how many are missing. The month selector at the top right moves between them.">
+      Панель показує стан звітного місяця: скільки вісників активні, скільки звітів здано, скільки бракує. Місяць угорі праворуч можна перемкнути, щоб подивитися попередні.
+    </p>
+
+    <figure>
+      <img src="help/dashboard-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/dashboard-uk.png" data-src-en="help/dashboard-en.png"
+           alt="">
+      <figcaption data-uk="Кожна картка — посилання на роботу, яку варто зробити далі."
+                  data-en="Each card links to the work worth doing next.">Кожна картка — посилання на роботу, яку варто зробити далі.</figcaption>
+    </figure>
+
+    <p style="margin-top:22px"
+       data-uk="«Бракує звітів» веде до списку тих, хто ще не здав. «Підсумки перед закриттям» унизу показують, що піде у звіт збору, і містять кнопку закриття місяця."
+       data-en="“Missing reports” opens the list of who has not handed one in. The totals at the bottom show what will go into the congregation’s figures, with the button that closes the month.">
+      «Бракує звітів» веде до списку тих, хто ще не здав. «Підсумки перед закриттям» унизу показують, що піде у звіт збору, і містять кнопку закриття місяця.
+    </p>
+  </div>
+</section>
+
+<section id="monthly">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month">Щомісяця</p>
+    <h2 data-uk="Звіти за місяць" data-en="Monthly reports">Звіти за місяць</h2>
+    <p data-uk="Це головна сторінка секретаря. Усі вісники в одному списку за групами; для кожного позначається участь у служінні, а для піонерів — години."
+       data-en="This is the secretary’s main screen. Every publisher in one list by group, each marked as having shared in the ministry or not, with hours for pioneers.">
+      Це головна сторінка секретаря. Усі вісники в одному списку за групами; для кожного позначається участь у служінні, а для піонерів — години.
+    </p>
+
+    <figure>
+      <img src="help/reporting-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/reporting-uk.png" data-src-en="help/reporting-en.png"
+           alt="">
+      <figcaption data-uk="Зелена позначка ліворуч — звіт прийнято, порожня — ще ні."
+                  data-en="A green dot on the left means the report is in; an empty one means it is not.">Зелена позначка ліворуч — звіт прийнято, порожня — ще ні.</figcaption>
+    </figure>
+
+    <ul class="points">
+      <li data-uk="Вводити можна з клавіатури: Enter переходить до наступного поля, Ctrl+Enter зберігає й переходить далі, Esc закриває рядок."
+          data-en="It is built for the keyboard: Enter moves to the next field, Ctrl+Enter saves and moves on, Esc closes the row.">Вводити можна з клавіатури: Enter переходить до наступного поля, Ctrl+Enter зберігає й переходить далі, Esc закриває рядок.</li>
+      <li data-uk="Прапорець «Лише відсутні звіти» лишає в списку тих, кого ще треба знайти."
+          data-en="The “missing only” checkbox leaves just the people still to be chased.">Прапорець «Лише відсутні звіти» лишає в списку тих, кого ще треба знайти.</li>
+      <li data-uk="Звіт, зданий із запізненням, вводиться за той місяць, якого він стосується, і зараховується в місяць, коли його прийняли."
+          data-en="A late report is entered against the month it is about, and counted in the month it was handed in.">Звіт, зданий із запізненням, вводиться за той місяць, якого він стосується, і зараховується в місяць, коли його прийняли.</li>
+      <li data-uk="Коли всі звіти зібрано, місяць закривається на панелі. Закритий місяць можна відкрити знову."
+          data-en="Once everything is in, the month is closed from the dashboard. A closed month can be reopened.">Коли всі звіти зібрано, місяць закривається на панелі. Закритий місяць можна відкрити знову.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="attendance">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month">Щомісяця</p>
+    <h2 data-uk="Відвідування" data-en="Attendance">Відвідування</h2>
+    <p data-uk="Кількість присутніх на зібраннях серед тижня та у вихідні, за тижнями. Середні значення програма рахує сама — саме вони потрапляють у бланк S-88."
+       data-en="The counts for the midweek and weekend meetings, week by week. The averages are worked out for you, and they are what the S-88 form needs.">
+      Кількість присутніх на зібраннях серед тижня та у вихідні, за тижнями. Середні значення програма рахує сама — саме вони потрапляють у бланк S-88.
+    </p>
+
+    <figure>
+      <img src="help/attendance-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/attendance-uk.png" data-src-en="help/attendance-en.png"
+           alt="">
+      <figcaption data-uk="Місяць із п'ятьма зібраннями має п'ятий рядок; порожній тиждень не псує середнього."
+                  data-en="A month with five meetings gets a fifth row, and an empty week does not spoil the average.">Місяць із п'ятьма зібраннями має п'ятий рядок; порожній тиждень не псує середнього.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="people">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Записи" data-en="Records">Записи</p>
+    <h2 data-uk="Вісники" data-en="Publishers">Вісники</h2>
+    <p data-uk="Картка кожного вісника: контакти, адреса, родинні зв'язки, призначення, дата хрещення, піонерське служіння, медична довіреність і особисті нотатки."
+       data-en="A card for each publisher: contact details, address, family, appointments, baptism date, pioneer service, medical directive and private notes.">
+      Картка кожного вісника: контакти, адреса, родинні зв'язки, призначення, дата хрещення, піонерське служіння, медична довіреність і особисті нотатки.
+    </p>
+
+    <figure>
+      <img src="help/people-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/people-uk.png" data-src-en="help/people-en.png"
+           alt="">
+      <figcaption data-uk="Пошук і фільтри згори; список показує групу та стан."
+                  data-en="Search and filters at the top; the list shows the group and the status.">Пошук і фільтри згори; список показує групу та стан.</figcaption>
+    </figure>
+
+    <div class="note">
+      <p data-uk="Історія зберігається. Коли вісник переходить в іншу групу, стає піонером або припиняє служіння, попередній запис не стирається — він закривається датою. Тому торішні звіти й далі показують те, що було насправді тоді."
+         data-en="History is kept. When someone moves group, becomes a pioneer or stops serving, the previous record is not overwritten — it is closed with a date. That is why last year’s reports still show what was actually true then.">
+        Історія зберігається. Коли вісник переходить в іншу групу, стає піонером або припиняє служіння, попередній запис не стирається — він закривається датою. Тому торішні звіти й далі показують те, що було насправді тоді.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="groups">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Записи" data-en="Records">Записи</p>
+    <h2 data-uk="Групи" data-en="Groups">Групи</h2>
+    <p data-uk="Групи служіння з наглядачем і помічником. Вісників можна переносити між групами; дата переходу зберігається."
+       data-en="The field service groups, each with its overseer and assistant. Publishers can be moved between them, and the date of the move is kept.">
+      Групи служіння з наглядачем і помічником. Вісників можна переносити між групами; дата переходу зберігається.
+    </p>
+
+    <figure>
+      <img src="help/groups-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/groups-uk.png" data-src-en="help/groups-en.png"
+           alt="">
+      <figcaption data-uk="Склад груп; окремо показано тих, хто ще не приписаний до жодної."
+                  data-en="Who is in each group, with the unassigned listed separately.">Склад груп; окремо показано тих, хто ще не приписаний до жодної.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="reports">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Друк" data-en="Printing">Друк</p>
+    <h2 data-uk="Звіти та бланки" data-en="Reports and forms">Звіти та бланки</h2>
+    <p data-uk="Тридцять три звіти, зібрані за призначенням: служіння, аналіз, особи та контакти. Серед них офіційні бланки S-21 (картки вісників) і S-88 (звіт про відвідуваність)."
+       data-en="Thirty-three reports, grouped by what they are for: service, analysis, people and contact details. Among them the official S-21 publisher cards and the S-88 attendance report.">
+      Тридцять три звіти, зібрані за призначенням: служіння, аналіз, особи та контакти. Серед них офіційні бланки S-21 (картки вісників) і S-88 (звіт про відвідуваність).
+    </p>
+
+    <figure>
+      <img src="help/reports-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/reports-uk.png" data-src-en="help/reports-en.png"
+           alt="">
+      <figcaption data-uk="Кожен звіт відкривається з параметрами — місяць, службовий рік або група."
+                  data-en="Each report opens with its parameters — a month, a service year or a group.">Кожен звіт відкривається з параметрами — місяць, службовий рік або група.</figcaption>
+    </figure>
+
+    <p style="margin-top:22px"
+       data-uk="Готовий звіт можна надрукувати, зберегти в PDF або вивантажити таблицею (CSV чи TSV) для електронних таблиць."
+       data-en="A report can be printed, saved as PDF, or written out as a table (CSV or TSV) for a spreadsheet.">
+      Готовий звіт можна надрукувати, зберегти в PDF або вивантажити таблицею (CSV чи TSV) для електронних таблиць.
+    </p>
+
+    <div class="note">
+      <p data-uk="Перед кожним вивантаженням програма нагадує, що у файлі — особисті дані збору, і що поза зашифрованою базою вони більше нічим не захищені. Це нагадування не можна вимкнути."
+         data-en="Before every export the app reminds you that the file holds personal information about the congregation, and that outside the encrypted database nothing protects it any more. That warning cannot be switched off.">
+        Перед кожним вивантаженням програма нагадує, що у файлі — особисті дані збору, і що поза зашифрованою базою вони більше нічим не захищені. Це нагадування не можна вимкнути.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="backups">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Безпека" data-en="Safety">Безпека</p>
+    <h2 data-uk="Резервні копії" data-en="Backups">Резервні копії</h2>
+    <p data-uk="Копія створюється однією кнопкою й шифрується тим самим паролем, що й основний файл. Зберігайте копії на іншому носії — зламаний диск забирає з собою і базу, і копії поруч із нею."
+       data-en="A backup is one button, encrypted with the same passphrase as the live file. Keep copies somewhere else — a failed disk takes the database and any backup sitting next to it.">
+      Копія створюється однією кнопкою й шифрується тим самим паролем, що й основний файл. Зберігайте копії на іншому носії — зламаний диск забирає з собою і базу, і копії поруч із нею.
+    </p>
+
+    <figure>
+      <img src="help/backups-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/backups-uk.png" data-src-en="help/backups-en.png"
+           alt="">
+      <figcaption data-uk="Список створених копій; відновлення просить пароль тієї копії."
+                  data-en="The list of backups; restoring asks for that backup’s passphrase.">Список створених копій; відновлення просить пароль тієї копії.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="settings">
+  <div class="wrap">
+    <p class="eyebrow" data-uk="Налаштування" data-en="Settings">Налаштування</p>
+    <h2 data-uk="Мова та пароль" data-en="Language and passphrase">Мова та пароль</h2>
+    <p data-uk="Мова інтерфейсу — українська або англійська, змінюється будь-коли. Тут же змінюється пароль бази."
+       data-en="The interface language, Ukrainian or English, switchable at any time. The database passphrase is changed here too.">
+      Мова інтерфейсу — українська або англійська, змінюється будь-коли. Тут же змінюється пароль бази.
+    </p>
+
+    <figure>
+      <img src="help/settings-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
+           data-src-uk="help/settings-uk.png" data-src-en="help/settings-en.png"
+           alt="">
+      <figcaption data-uk="Зміна пароля перешифровує файл; стару копію старий пароль і відкриває."
+                  data-en="Changing the passphrase re-encrypts the file; an older backup still opens with the older passphrase.">Зміна пароля перешифровує файл; стару копію старий пароль і відкриває.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p data-uk="Не знайшли відповіді? Напишіть на GitHub — тільки не додавайте до звернення справжніх даних збору."
+       data-en="Not answered here? Open an issue on GitHub — just do not attach real congregation data to it.">
+      Не знайшли відповіді? Напишіть на GitHub — тільки не додавайте до звернення справжніх даних збору.
+    </p>
+    <p><a href="https://github.com/isalo/sekretar-app/issues"
+          data-uk="Задати питання на GitHub" data-en="Ask on GitHub">Задати питання на GitHub</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var lang = 'uk';
+  // The same key the download page uses, so the choice survives the jump
+  // between the two pages.
+  try { lang = localStorage.getItem('sekretar-lang') || 'uk'; } catch (e) {}
+  if (lang !== 'en') lang = 'uk';
+
+  function applyLang(next) {
+    lang = next;
+    document.documentElement.lang = next;
+
+    var nodes = document.querySelectorAll('[data-uk][data-en]');
+    for (var i = 0; i < nodes.length; i++) {
+      var text = nodes[i].getAttribute('data-' + next);
+      if (text !== null) nodes[i].textContent = text;
+    }
+
+    // Screenshots exist in both languages; swapping the source is the whole
+    // point of having captured them twice.
+    var shots = document.querySelectorAll('img[data-src-uk][data-src-en]');
+    for (var j = 0; j < shots.length; j++) {
+      var src = shots[j].getAttribute('data-src-' + next);
+      if (src && shots[j].getAttribute('src') !== src) shots[j].setAttribute('src', src);
+    }
+
+    var buttons = document.querySelectorAll('.lang button');
+    for (var k = 0; k < buttons.length; k++) {
+      buttons[k].setAttribute('aria-pressed', String(buttons[k].dataset.lang === next));
+    }
+    try { localStorage.setItem('sekretar-lang', next); } catch (e) {}
+  }
+
+  document.querySelector('.lang').addEventListener('click', function (event) {
+    var button = event.target.closest('button[data-lang]');
+    if (button) applyLang(button.dataset.lang);
+  });
+
+  applyLang(lang);
+})();
+</script>
+
+</body>
+</html>
