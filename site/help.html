@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://sekretar.cykor.net/help">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="pl_PL">
 <style>
   :root {
     --deep: #1f5670;
@@ -136,11 +138,13 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="icon.svg" alt=""><span>Секретар</span></a>
     <nav>
-      <a href="/" data-uk="Завантажити" data-en="Download">Завантажити</a>
+      <a href="/" data-uk="Завантажити" data-en="Download" data-ru="Скачать" data-pl="Pobierz">Завантажити</a>
       <a href="https://github.com/isalo/sekretar-app">GitHub</a>
       <span class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="uk" aria-pressed="true">УКР</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">РУС</button>
+        <button type="button" data-lang="pl" aria-pressed="false">PL</button>
       </span>
     </nav>
   </div>
@@ -148,26 +152,28 @@
 
 <div class="intro">
   <div class="wrap">
-    <h1 data-uk="Довідка" data-en="Help">Довідка</h1>
+    <h1 data-uk="Довідка" data-en="Help" data-ru="Справка" data-pl="Pomoc">Довідка</h1>
     <p class="tagline"
        data-uk="Порядок роботи за місяць — від першого запуску до зданого звіту. Знімки екрана зроблено з вигаданим збором; справжніх даних тут немає."
-       data-en="The monthly routine, from first launch to a filed report. The screenshots come from an invented congregation; no real data appears here.">
+       data-en="The monthly routine, from first launch to a filed report. The screenshots come from an invented congregation; no real data appears here."
+       data-ru="Порядок работы за месяц — от первого запуска до сданного отчёта. Снимки экрана сделаны с вымышленным собранием; настоящих данных здесь нет."
+       data-pl="Miesięczny tryb pracy — od pierwszego uruchomienia do złożonego sprawozdania. Zrzuty ekranu pochodzą z fikcyjnego zboru; nie ma tu prawdziwych danych.">
       Порядок роботи за місяць — від першого запуску до зданого звіту. Знімки екрана зроблено з вигаданим збором; справжніх даних тут немає.
     </p>
 
     <nav class="toc" aria-label="Contents">
-      <h2 data-uk="Зміст" data-en="Contents">Зміст</h2>
+      <h2 data-uk="Зміст" data-en="Contents" data-ru="Содержание" data-pl="Spis treści">Зміст</h2>
       <ol>
-        <li><a href="#start" data-uk="Перший запуск" data-en="First launch">Перший запуск</a></li>
-        <li><a href="#import" data-uk="Перенесення з TSWIN" data-en="Moving from TSWIN">Перенесення з TSWIN</a></li>
-        <li><a href="#dashboard" data-uk="Панель" data-en="Dashboard">Панель</a></li>
-        <li><a href="#monthly" data-uk="Звіти за місяць" data-en="Monthly reports">Звіти за місяць</a></li>
-        <li><a href="#attendance" data-uk="Відвідування" data-en="Attendance">Відвідування</a></li>
-        <li><a href="#people" data-uk="Вісники" data-en="Publishers">Вісники</a></li>
-        <li><a href="#groups" data-uk="Групи" data-en="Groups">Групи</a></li>
-        <li><a href="#reports" data-uk="Звіти та бланки" data-en="Reports and forms">Звіти та бланки</a></li>
-        <li><a href="#backups" data-uk="Резервні копії" data-en="Backups">Резервні копії</a></li>
-        <li><a href="#settings" data-uk="Налаштування" data-en="Settings">Налаштування</a></li>
+        <li><a href="#start" data-uk="Перший запуск" data-en="First launch" data-ru="Первый запуск" data-pl="Pierwsze uruchomienie">Перший запуск</a></li>
+        <li><a href="#import" data-uk="Перенесення з TSWIN" data-en="Moving from TSWIN" data-ru="Перенос из TSWIN" data-pl="Przenosiny z TSWIN">Перенесення з TSWIN</a></li>
+        <li><a href="#dashboard" data-uk="Панель" data-en="Dashboard" data-ru="Панель" data-pl="Panel">Панель</a></li>
+        <li><a href="#monthly" data-uk="Звіти за місяць" data-en="Monthly reports" data-ru="Отчёты за месяц" data-pl="Sprawozdania miesięczne">Звіти за місяць</a></li>
+        <li><a href="#attendance" data-uk="Відвідування" data-en="Attendance" data-ru="Посещаемость" data-pl="Frekwencja">Відвідування</a></li>
+        <li><a href="#people" data-uk="Вісники" data-en="Publishers" data-ru="Возвещатели" data-pl="Głosiciele">Вісники</a></li>
+        <li><a href="#groups" data-uk="Групи" data-en="Groups" data-ru="Группы" data-pl="Grupy">Групи</a></li>
+        <li><a href="#reports" data-uk="Звіти та бланки" data-en="Reports and forms" data-ru="Отчёты и бланки" data-pl="Sprawozdania i formularze">Звіти та бланки</a></li>
+        <li><a href="#backups" data-uk="Резервні копії" data-en="Backups" data-ru="Резервные копии" data-pl="Kopie zapasowe">Резервні копії</a></li>
+        <li><a href="#settings" data-uk="Налаштування" data-en="Settings" data-ru="Настройки" data-pl="Ustawienia">Налаштування</a></li>
       </ol>
     </nav>
   </div>
@@ -175,39 +181,52 @@
 
 <section id="start">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Крок 1" data-en="Step 1">Крок 1</p>
-    <h2 data-uk="Перший запуск" data-en="First launch">Перший запуск</h2>
+    <p class="eyebrow" data-uk="Крок 1" data-en="Step 1" data-ru="Шаг 1" data-pl="Krok 1">Крок 1</p>
+    <h2 data-uk="Перший запуск" data-en="First launch" data-ru="Первый запуск" data-pl="Pierwsze uruchomienie">Перший запуск</h2>
     <p data-uk="Усі записи збору лежать в одному зашифрованому файлі на вашому комп'ютері. Під час першого запуску програма просить створити його та придумати пароль."
-       data-en="Every congregation record lives in one encrypted file on your own computer. On first launch the app asks you to create it and choose a passphrase.">
+       data-en="Every congregation record lives in one encrypted file on your own computer. On first launch the app asks you to create it and choose a passphrase."
+       data-ru="Все записи собрания хранятся в одном зашифрованном файле на вашем компьютере. При первом запуске программа просит создать его и придумать пароль."
+       data-pl="Wszystkie zapisy zboru znajdują się w jednym zaszyfrowanym pliku na twoim komputerze. Przy pierwszym uruchomieniu program prosi o jego utworzenie i wybranie hasła.">
       Усі записи збору лежать в одному зашифрованому файлі на вашому комп'ютері. Під час першого запуску програма просить створити його та придумати пароль.
     </p>
 
     <ol class="steps">
-      <li data-uk="Виберіть «Створити базу даних»." data-en="Choose “Create database”.">Виберіть «Створити базу даних».</li>
+      <li data-uk="Виберіть «Створити базу даних»." data-en="Choose “Create database”." data-ru="Выберите «Создать базу данных»." data-pl="Wybierz „Utwórz bazę danych”.">Виберіть «Створити базу даних».</li>
       <li data-uk="Натисніть «Нова база…» і вкажіть, де зберегти файл. Підійде тека «Документи»."
-          data-en="Click “New database…” and say where to keep the file. Documents is a fine place.">Натисніть «Нова база…» і вкажіть, де зберегти файл. Підійде тека «Документи».</li>
+          data-en="Click “New database…” and say where to keep the file. Documents is a fine place."
+          data-ru="Нажмите «Новая база…» и укажите, где сохранить файл. Подойдёт папка «Документы»."
+          data-pl="Kliknij „Nowa baza…” i wskaż, gdzie zapisać plik. Folder „Dokumenty” w zupełności wystarczy.">Натисніть «Нова база…» і вкажіть, де зберегти файл. Підійде тека «Документи».</li>
       <li data-uk="Двічі введіть пароль — щонайменше вісім символів."
-          data-en="Type the passphrase twice — at least eight characters.">Двічі введіть пароль — щонайменше вісім символів.</li>
+          data-en="Type the passphrase twice — at least eight characters."
+          data-ru="Дважды введите пароль — не менее восьми символов."
+          data-pl="Dwukrotnie wpisz hasło — co najmniej osiem znaków.">Двічі введіть пароль — щонайменше вісім символів.</li>
     </ol>
 
     <figure>
       <img src="help/unlock-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/unlock-uk.png" data-src-en="help/unlock-en.png"
+           data-src-ru="help/unlock-ru.png" data-src-pl="help/unlock-pl.png"
            alt="">
       <figcaption data-uk="Вікно створення бази даних під час першого запуску."
-                  data-en="The create-database window on a first run.">Вікно створення бази даних під час першого запуску.</figcaption>
+                  data-en="The create-database window on a first run."
+                  data-ru="Окно создания базы данных при первом запуске."
+                  data-pl="Okno tworzenia bazy danych przy pierwszym uruchomieniu.">Вікно створення бази даних під час першого запуску.</figcaption>
     </figure>
 
     <div class="note">
       <p data-uk="Пароль неможливо відновити. Ніхто, включно з автором програми, не може прочитати ваш файл або скинути пароль — саме тому дані й лишаються приватними. Запишіть пароль і зберігайте окремо від комп'ютера."
-         data-en="The passphrase cannot be recovered. Nobody, the author included, can read your file or reset it — which is exactly why the data stays private. Write the passphrase down and keep it away from the computer.">
+         data-en="The passphrase cannot be recovered. Nobody, the author included, can read your file or reset it — which is exactly why the data stays private. Write the passphrase down and keep it away from the computer."
+         data-ru="Пароль невозможно восстановить. Никто, включая автора программы, не может прочитать ваш файл или сбросить пароль — именно поэтому данные и остаются приватными. Запишите пароль и храните его отдельно от компьютера."
+         data-pl="Hasła nie można odzyskać. Nikt, łącznie z autorem programu, nie może odczytać twojego pliku ani zresetować hasła — właśnie dlatego dane pozostają prywatne. Zapisz hasło i przechowuj je z dala od komputera.">
         Пароль неможливо відновити. Ніхто, включно з автором програми, не може прочитати ваш файл або скинути пароль — саме тому дані й лишаються приватними. Запишіть пароль і зберігайте окремо від комп'ютера.
       </p>
     </div>
 
     <p style="margin-top:22px"
        data-uk="Надалі програма відкриватиметься цим самим вікном: файл уже вибрано, треба лише ввести пароль. Кнопка «Заблокувати» внизу ліворуч закриває базу, не виходячи з програми."
-       data-en="From then on the app opens with the same window: the file is already chosen and only the passphrase is needed. The “Lock” button at the bottom left closes the database without quitting.">
+       data-en="From then on the app opens with the same window: the file is already chosen and only the passphrase is needed. The “Lock” button at the bottom left closes the database without quitting."
+       data-ru="В дальнейшем программа будет открываться этим же окном: файл уже выбран, нужно лишь ввести пароль. Кнопка «Заблокировать» внизу слева закрывает базу, не выходя из программы."
+       data-pl="Odtąd program będzie się otwierał tym samym oknem: plik jest już wybrany, trzeba tylko wpisać hasło. Przycisk „Zablokuj” w lewym dolnym rogu zamyka bazę bez zamykania programu.">
       Надалі програма відкриватиметься цим самим вікном: файл уже вибрано, треба лише ввести пароль. Кнопка «Заблокувати» внизу ліворуч закриває базу, не виходячи з програми.
     </p>
   </div>
@@ -215,32 +234,43 @@
 
 <section id="import">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Крок 2" data-en="Step 2">Крок 2</p>
-    <h2 data-uk="Перенесення з TSWIN" data-en="Moving from TSWIN">Перенесення з TSWIN</h2>
+    <p class="eyebrow" data-uk="Крок 2" data-en="Step 2" data-ru="Шаг 2" data-pl="Krok 2">Крок 2</p>
+    <h2 data-uk="Перенесення з TSWIN" data-en="Moving from TSWIN" data-ru="Перенос из TSWIN" data-pl="Przenosiny z TSWIN">Перенесення з TSWIN</h2>
     <p data-uk="Якщо збір вів записи в TSWIN або TSWINU, не треба вводити нічого вручну. Програма читає експорт XML (вісники, групи та історія звітів) і місячні файли CSV."
-       data-en="If the congregation kept its records in TSWIN or TSWINU, nothing has to be typed in by hand. The app reads the XML export — publishers, groups and the history of reports — and the monthly CSV files.">
+       data-en="If the congregation kept its records in TSWIN or TSWINU, nothing has to be typed in by hand. The app reads the XML export — publishers, groups and the history of reports — and the monthly CSV files."
+       data-ru="Если собрание вело записи в TSWIN или TSWINU, вводить ничего вручную не нужно. Программа читает XML-экспорт (возвещатели, группы и история отчётов) и месячные файлы CSV."
+       data-pl="Jeśli zbór prowadził zapisy w TSWIN lub TSWINU, nie trzeba niczego wpisywać ręcznie. Program czyta eksport XML (głosiciele, grupy i historia sprawozdań) oraz miesięczne pliki CSV.">
       Якщо збір вів записи в TSWIN або TSWINU, не треба вводити нічого вручну. Програма читає експорт XML (вісники, групи та історія звітів) і місячні файли CSV.
     </p>
 
     <ol class="steps">
-      <li data-uk="Відкрийте «Імпорт» і виберіть файл." data-en="Open “Import” and choose the file.">Відкрийте «Імпорт» і виберіть файл.</li>
+      <li data-uk="Відкрийте «Імпорт» і виберіть файл." data-en="Open “Import” and choose the file." data-ru="Откройте «Импорт» и выберите файл." data-pl="Otwórz „Import” i wybierz plik.">Відкрийте «Імпорт» і виберіть файл.</li>
       <li data-uk="Перегляньте, що саме буде додано: скільки нових осіб, скільки звітів, які місяці."
-          data-en="Look over what will be added: how many new people, how many reports, which months.">Перегляньте, що саме буде додано: скільки нових осіб, скільки звітів, які місяці.</li>
+          data-en="Look over what will be added: how many new people, how many reports, which months."
+          data-ru="Просмотрите, что именно будет добавлено: сколько новых людей, сколько отчётов, какие месяцы."
+          data-pl="Sprawdź, co dokładnie zostanie dodane: ile nowych osób, ile sprawozdań, które miesiące.">Перегляньте, що саме буде додано: скільки нових осіб, скільки звітів, які місяці.</li>
       <li data-uk="Якщо все правильно — підтвердьте. До цього моменту в базі не змінюється нічого."
-          data-en="If it looks right, confirm. Until that moment nothing in the database has changed.">Якщо все правильно — підтвердьте. До цього моменту в базі не змінюється нічого.</li>
+          data-en="If it looks right, confirm. Until that moment nothing in the database has changed."
+          data-ru="Если всё верно — подтвердите. До этого момента в базе не меняется ничего."
+          data-pl="Jeśli wszystko się zgadza — potwierdź. Do tego momentu w bazie nic się nie zmienia.">Якщо все правильно — підтвердьте. До цього моменту в базі не змінюється нічого.</li>
     </ol>
 
     <figure>
       <img src="help/imports-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/imports-uk.png" data-src-en="help/imports-en.png"
+           data-src-ru="help/imports-ru.png" data-src-pl="help/imports-pl.png"
            alt="">
       <figcaption data-uk="Сторінка імпорту: файл спершу розбирається й показується, і лише потім записується."
-                  data-en="The import page: a file is parsed and shown first, and only then written.">Сторінка імпорту: файл спершу розбирається й показується, і лише потім записується.</figcaption>
+                  data-en="The import page: a file is parsed and shown first, and only then written."
+                  data-ru="Страница импорта: файл сначала разбирается и показывается, и лишь потом записывается."
+                  data-pl="Strona importu: plik jest najpierw analizowany i pokazywany, a dopiero potem zapisywany.">Сторінка імпорту: файл спершу розбирається й показується, і лише потім записується.</figcaption>
     </figure>
 
     <div class="note">
       <p data-uk="Якщо ім'я з файлу підходить до кількох осіб у базі, програма не вгадує — вона позначає рядок як конфлікт і чекає на ваше рішення. Файл, який не вдається прочитати надійно, буде відхилено з поясненням, а не імпортовано наполовину."
-         data-en="When a name in the file matches several people, the app does not guess — it marks the row as a conflict and waits for you. A file it cannot read reliably is refused with an explanation rather than half-imported.">
+         data-en="When a name in the file matches several people, the app does not guess — it marks the row as a conflict and waits for you. A file it cannot read reliably is refused with an explanation rather than half-imported."
+         data-ru="Если имя из файла подходит нескольким людям в базе, программа не гадает — она помечает строку как конфликт и ждёт вашего решения. Файл, который не удаётся прочитать надёжно, будет отклонён с объяснением, а не импортирован наполовину."
+         data-pl="Jeśli imię z pliku pasuje do kilku osób w bazie, program nie zgaduje — oznacza wiersz jako konflikt i czeka na twoją decyzję. Plik, którego nie da się wiarygodnie odczytać, zostanie odrzucony z wyjaśnieniem, a nie zaimportowany w połowie.">
         Якщо ім'я з файлу підходить до кількох осіб у базі, програма не вгадує — вона позначає рядок як конфлікт і чекає на ваше рішення. Файл, який не вдається прочитати надійно, буде відхилено з поясненням, а не імпортовано наполовину.
       </p>
     </div>
@@ -249,24 +279,31 @@
 
 <section id="dashboard">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month">Щомісяця</p>
-    <h2 data-uk="Панель" data-en="Dashboard">Панель</h2>
+    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month" data-ru="Ежемесячно" data-pl="Co miesiąc">Щомісяця</p>
+    <h2 data-uk="Панель" data-en="Dashboard" data-ru="Панель" data-pl="Panel">Панель</h2>
     <p data-uk="Панель показує стан звітного місяця: скільки вісників активні, скільки звітів здано, скільки бракує. Місяць угорі праворуч можна перемкнути, щоб подивитися попередні."
-       data-en="The dashboard shows the state of the reporting month: how many publishers are active, how many reports are in, how many are missing. The month selector at the top right moves between them.">
+       data-en="The dashboard shows the state of the reporting month: how many publishers are active, how many reports are in, how many are missing. The month selector at the top right moves between them."
+       data-ru="Панель показывает состояние отчётного месяца: сколько возвещателей активны, сколько отчётов сдано, сколько не хватает. Месяц вверху справа можно переключить, чтобы посмотреть предыдущие."
+       data-pl="Panel pokazuje stan miesiąca sprawozdawczego: ilu głosicieli jest aktywnych, ile sprawozdań złożono, ilu brakuje. Miesiąc w prawym górnym rogu można przełączyć, żeby zobaczyć poprzednie.">
       Панель показує стан звітного місяця: скільки вісників активні, скільки звітів здано, скільки бракує. Місяць угорі праворуч можна перемкнути, щоб подивитися попередні.
     </p>
 
     <figure>
       <img src="help/dashboard-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/dashboard-uk.png" data-src-en="help/dashboard-en.png"
+           data-src-ru="help/dashboard-ru.png" data-src-pl="help/dashboard-pl.png"
            alt="">
       <figcaption data-uk="Кожна картка — посилання на роботу, яку варто зробити далі."
-                  data-en="Each card links to the work worth doing next.">Кожна картка — посилання на роботу, яку варто зробити далі.</figcaption>
+                  data-en="Each card links to the work worth doing next."
+                  data-ru="Каждая карточка — ссылка на работу, которую стоит сделать дальше."
+                  data-pl="Każda karta to odnośnik do pracy, którą warto zrobić dalej.">Кожна картка — посилання на роботу, яку варто зробити далі.</figcaption>
     </figure>
 
     <p style="margin-top:22px"
        data-uk="«Бракує звітів» веде до списку тих, хто ще не здав. «Підсумки перед закриттям» унизу показують, що піде у звіт збору, і містять кнопку закриття місяця."
-       data-en="“Missing reports” opens the list of who has not handed one in. The totals at the bottom show what will go into the congregation’s figures, with the button that closes the month.">
+       data-en="“Missing reports” opens the list of who has not handed one in. The totals at the bottom show what will go into the congregation’s figures, with the button that closes the month."
+       data-ru="«Не хватает отчётов» ведёт к списку тех, кто ещё не сдал. «Итоги перед закрытием» внизу показывают, что войдёт в отчёт собрания, и содержат кнопку закрытия месяца."
+       data-pl="„Brakujące sprawozdania” prowadzi do listy tych, którzy jeszcze nie złożyli. „Podsumowanie przed zamknięciem” na dole pokazuje, co trafi do danych zboru, i zawiera przycisk zamknięcia miesiąca.">
       «Бракує звітів» веде до списку тих, хто ще не здав. «Підсумки перед закриттям» унизу показують, що піде у звіт збору, і містять кнопку закриття місяця.
     </p>
   </div>
@@ -274,73 +311,98 @@
 
 <section id="monthly">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month">Щомісяця</p>
-    <h2 data-uk="Звіти за місяць" data-en="Monthly reports">Звіти за місяць</h2>
+    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month" data-ru="Ежемесячно" data-pl="Co miesiąc">Щомісяця</p>
+    <h2 data-uk="Звіти за місяць" data-en="Monthly reports" data-ru="Отчёты за месяц" data-pl="Sprawozdania miesięczne">Звіти за місяць</h2>
     <p data-uk="Це головна сторінка секретаря. Усі вісники в одному списку за групами; для кожного позначається участь у служінні, а для піонерів — години."
-       data-en="This is the secretary’s main screen. Every publisher in one list by group, each marked as having shared in the ministry or not, with hours for pioneers.">
+       data-en="This is the secretary’s main screen. Every publisher in one list by group, each marked as having shared in the ministry or not, with hours for pioneers."
+       data-ru="Это главная страница секретаря. Все возвещатели в одном списке по группам; для каждого отмечается участие в служении, а для пионеров — часы."
+       data-pl="To główny ekran sekretarza. Wszyscy głosiciele w jednej liście według grup; dla każdego zaznacza się udział w służbie, a dla pionierów — godziny.">
       Це головна сторінка секретаря. Усі вісники в одному списку за групами; для кожного позначається участь у служінні, а для піонерів — години.
     </p>
 
     <figure>
       <img src="help/reporting-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/reporting-uk.png" data-src-en="help/reporting-en.png"
+           data-src-ru="help/reporting-ru.png" data-src-pl="help/reporting-pl.png"
            alt="">
       <figcaption data-uk="Зелена позначка ліворуч — звіт прийнято, порожня — ще ні."
-                  data-en="A green dot on the left means the report is in; an empty one means it is not.">Зелена позначка ліворуч — звіт прийнято, порожня — ще ні.</figcaption>
+                  data-en="A green dot on the left means the report is in; an empty one means it is not."
+                  data-ru="Зелёная отметка слева — отчёт принят, пустая — ещё нет."
+                  data-pl="Zielone oznaczenie po lewej oznacza złożone sprawozdanie, puste — jeszcze nie.">Зелена позначка ліворуч — звіт прийнято, порожня — ще ні.</figcaption>
     </figure>
 
     <ul class="points">
       <li data-uk="Вводити можна з клавіатури: Enter переходить до наступного поля, Ctrl+Enter зберігає й переходить далі, Esc закриває рядок."
-          data-en="It is built for the keyboard: Enter moves to the next field, Ctrl+Enter saves and moves on, Esc closes the row.">Вводити можна з клавіатури: Enter переходить до наступного поля, Ctrl+Enter зберігає й переходить далі, Esc закриває рядок.</li>
+          data-en="It is built for the keyboard: Enter moves to the next field, Ctrl+Enter saves and moves on, Esc closes the row."
+          data-ru="Вводить можно с клавиатуры: Enter переходит к следующему полю, Ctrl+Enter сохраняет и идёт дальше, Esc закрывает строку."
+          data-pl="Można wprowadzać z klawiatury: Enter przechodzi do następnego pola, Ctrl+Enter zapisuje i przechodzi dalej, Esc zamyka wiersz.">Вводити можна з клавіатури: Enter переходить до наступного поля, Ctrl+Enter зберігає й переходить далі, Esc закриває рядок.</li>
       <li data-uk="Прапорець «Лише відсутні звіти» лишає в списку тих, кого ще треба знайти."
-          data-en="The “missing only” checkbox leaves just the people still to be chased.">Прапорець «Лише відсутні звіти» лишає в списку тих, кого ще треба знайти.</li>
+          data-en="The “missing only” checkbox leaves just the people still to be chased."
+          data-ru="Флажок «Только отсутствующие отчёты» оставляет в списке только тех, кого ещё нужно найти."
+          data-pl="Pole wyboru „Tylko brakujące sprawozdania” zostawia na liście tylko tych, których jeszcze trzeba znaleźć.">Прапорець «Лише відсутні звіти» лишає в списку тих, кого ще треба знайти.</li>
       <li data-uk="Звіт, зданий із запізненням, вводиться за той місяць, якого він стосується, і зараховується в місяць, коли його прийняли."
-          data-en="A late report is entered against the month it is about, and counted in the month it was handed in.">Звіт, зданий із запізненням, вводиться за той місяць, якого він стосується, і зараховується в місяць, коли його прийняли.</li>
+          data-en="A late report is entered against the month it is about, and counted in the month it was handed in."
+          data-ru="Отчёт, сданный с опозданием, вводится за тот месяц, которого он касается, и засчитывается в месяц, когда его приняли."
+          data-pl="Spóźnione sprawozdanie wprowadza się za miesiąc, którego dotyczy, a liczy się do miesiąca, w którym zostało złożone.">Звіт, зданий із запізненням, вводиться за той місяць, якого він стосується, і зараховується в місяць, коли його прийняли.</li>
       <li data-uk="Коли всі звіти зібрано, місяць закривається на панелі. Закритий місяць можна відкрити знову."
-          data-en="Once everything is in, the month is closed from the dashboard. A closed month can be reopened.">Коли всі звіти зібрано, місяць закривається на панелі. Закритий місяць можна відкрити знову.</li>
+          data-en="Once everything is in, the month is closed from the dashboard. A closed month can be reopened."
+          data-ru="Когда все отчёты собраны, месяц закрывается на панели. Закрытый месяц можно открыть снова."
+          data-pl="Gdy wszystkie sprawozdania są zebrane, miesiąc zamyka się na panelu. Zamknięty miesiąc można otworzyć ponownie.">Коли всі звіти зібрано, місяць закривається на панелі. Закритий місяць можна відкрити знову.</li>
     </ul>
   </div>
 </section>
 
 <section id="attendance">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month">Щомісяця</p>
-    <h2 data-uk="Відвідування" data-en="Attendance">Відвідування</h2>
+    <p class="eyebrow" data-uk="Щомісяця" data-en="Every month" data-ru="Ежемесячно" data-pl="Co miesiąc">Щомісяця</p>
+    <h2 data-uk="Відвідування" data-en="Attendance" data-ru="Посещаемость" data-pl="Frekwencja">Відвідування</h2>
     <p data-uk="Кількість присутніх на зібраннях серед тижня та у вихідні, за тижнями. Середні значення програма рахує сама — саме вони потрапляють у бланк S-88."
-       data-en="The counts for the midweek and weekend meetings, week by week. The averages are worked out for you, and they are what the S-88 form needs.">
+       data-en="The counts for the midweek and weekend meetings, week by week. The averages are worked out for you, and they are what the S-88 form needs."
+       data-ru="Количество присутствующих на встречах среди недели и в выходные, по неделям. Средние значения программа считает сама — именно они попадают в бланк S-88."
+       data-pl="Liczba obecnych na zebraniach w tygodniu i weekendowych, według tygodni. Średnie program liczy sam — to one trafiają do formularza S-88.">
       Кількість присутніх на зібраннях серед тижня та у вихідні, за тижнями. Середні значення програма рахує сама — саме вони потрапляють у бланк S-88.
     </p>
 
     <figure>
       <img src="help/attendance-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/attendance-uk.png" data-src-en="help/attendance-en.png"
+           data-src-ru="help/attendance-ru.png" data-src-pl="help/attendance-pl.png"
            alt="">
       <figcaption data-uk="Місяць із п'ятьма зібраннями має п'ятий рядок; порожній тиждень не псує середнього."
-                  data-en="A month with five meetings gets a fifth row, and an empty week does not spoil the average.">Місяць із п'ятьма зібраннями має п'ятий рядок; порожній тиждень не псує середнього.</figcaption>
+                  data-en="A month with five meetings gets a fifth row, and an empty week does not spoil the average."
+                  data-ru="В месяце с пятью встречами есть пятая строка; пустая неделя не портит среднее."
+                  data-pl="Miesiąc z pięcioma zebraniami ma piąty wiersz; pusty tydzień nie psuje średniej.">Місяць із п'ятьма зібраннями має п'ятий рядок; порожній тиждень не псує середнього.</figcaption>
     </figure>
   </div>
 </section>
 
 <section id="people">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Записи" data-en="Records">Записи</p>
-    <h2 data-uk="Вісники" data-en="Publishers">Вісники</h2>
+    <p class="eyebrow" data-uk="Записи" data-en="Records" data-ru="Записи" data-pl="Zapisy">Записи</p>
+    <h2 data-uk="Вісники" data-en="Publishers" data-ru="Возвещатели" data-pl="Głosiciele">Вісники</h2>
     <p data-uk="Картка кожного вісника: контакти, адреса, родинні зв'язки, призначення, дата хрещення, піонерське служіння, медична довіреність і особисті нотатки."
-       data-en="A card for each publisher: contact details, address, family, appointments, baptism date, pioneer service, medical directive and private notes.">
+       data-en="A card for each publisher: contact details, address, family, appointments, baptism date, pioneer service, medical directive and private notes."
+       data-ru="Карточка каждого возвещателя: контакты, адрес, семейные связи, назначения, дата крещения, пионерское служение, медицинская доверенность и личные заметки."
+       data-pl="Karta każdego głosiciela: kontakty, adres, więzi rodzinne, mianowania, data chrztu, służba pionierska, pełnomocnictwo medyczne i prywatne notatki.">
       Картка кожного вісника: контакти, адреса, родинні зв'язки, призначення, дата хрещення, піонерське служіння, медична довіреність і особисті нотатки.
     </p>
 
     <figure>
       <img src="help/people-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/people-uk.png" data-src-en="help/people-en.png"
+           data-src-ru="help/people-ru.png" data-src-pl="help/people-pl.png"
            alt="">
       <figcaption data-uk="Пошук і фільтри згори; список показує групу та стан."
-                  data-en="Search and filters at the top; the list shows the group and the status.">Пошук і фільтри згори; список показує групу та стан.</figcaption>
+                  data-en="Search and filters at the top; the list shows the group and the status."
+                  data-ru="Поиск и фильтры сверху; список показывает группу и статус."
+                  data-pl="Wyszukiwanie i filtry na górze; lista pokazuje grupę i status.">Пошук і фільтри згори; список показує групу та стан.</figcaption>
     </figure>
 
     <div class="note">
       <p data-uk="Історія зберігається. Коли вісник переходить в іншу групу, стає піонером або припиняє служіння, попередній запис не стирається — він закривається датою. Тому торішні звіти й далі показують те, що було насправді тоді."
-         data-en="History is kept. When someone moves group, becomes a pioneer or stops serving, the previous record is not overwritten — it is closed with a date. That is why last year’s reports still show what was actually true then.">
+         data-en="History is kept. When someone moves group, becomes a pioneer or stops serving, the previous record is not overwritten — it is closed with a date. That is why last year’s reports still show what was actually true then."
+         data-ru="История сохраняется. Когда возвещатель переходит в другую группу, становится пионером или прекращает служение, предыдущая запись не стирается — она закрывается датой. Поэтому прошлогодние отчёты по-прежнему показывают то, что было тогда на самом деле."
+         data-pl="Historia jest zachowywana. Gdy głosiciel przechodzi do innej grupy, zostaje pionierem albo przestaje służyć, poprzedni wpis nie jest nadpisywany — zostaje zamknięty datą. Dlatego zeszłoroczne sprawozdania nadal pokazują to, co było wtedy prawdą.">
         Історія зберігається. Коли вісник переходить в іншу групу, стає піонером або припиняє служіння, попередній запис не стирається — він закривається датою. Тому торішні звіти й далі показують те, що було насправді тоді.
       </p>
     </div>
@@ -349,49 +411,63 @@
 
 <section id="groups">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Записи" data-en="Records">Записи</p>
-    <h2 data-uk="Групи" data-en="Groups">Групи</h2>
+    <p class="eyebrow" data-uk="Записи" data-en="Records" data-ru="Записи" data-pl="Zapisy">Записи</p>
+    <h2 data-uk="Групи" data-en="Groups" data-ru="Группы" data-pl="Grupy">Групи</h2>
     <p data-uk="Групи служіння з наглядачем і помічником. Вісників можна переносити між групами; дата переходу зберігається."
-       data-en="The field service groups, each with its overseer and assistant. Publishers can be moved between them, and the date of the move is kept.">
+       data-en="The field service groups, each with its overseer and assistant. Publishers can be moved between them, and the date of the move is kept."
+       data-ru="Группы территориального служения с надзирателем и помощником. Возвещателей можно переносить между группами; дата перехода сохраняется."
+       data-pl="Grupy służby terenowej, każda z nadzorcą i pomocnikiem. Głosicieli można przenosić między grupami; data przeniesienia jest zapisywana.">
       Групи служіння з наглядачем і помічником. Вісників можна переносити між групами; дата переходу зберігається.
     </p>
 
     <figure>
       <img src="help/groups-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/groups-uk.png" data-src-en="help/groups-en.png"
+           data-src-ru="help/groups-ru.png" data-src-pl="help/groups-pl.png"
            alt="">
       <figcaption data-uk="Склад груп; окремо показано тих, хто ще не приписаний до жодної."
-                  data-en="Who is in each group, with the unassigned listed separately.">Склад груп; окремо показано тих, хто ще не приписаний до жодної.</figcaption>
+                  data-en="Who is in each group, with the unassigned listed separately."
+                  data-ru="Состав групп; отдельно показаны те, кто ещё не приписан ни к одной."
+                  data-pl="Skład grup; osobno pokazani są ci, którzy nie są jeszcze przypisani do żadnej.">Склад груп; окремо показано тих, хто ще не приписаний до жодної.</figcaption>
     </figure>
   </div>
 </section>
 
 <section id="reports">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Друк" data-en="Printing">Друк</p>
-    <h2 data-uk="Звіти та бланки" data-en="Reports and forms">Звіти та бланки</h2>
+    <p class="eyebrow" data-uk="Друк" data-en="Printing" data-ru="Печать" data-pl="Drukowanie">Друк</p>
+    <h2 data-uk="Звіти та бланки" data-en="Reports and forms" data-ru="Отчёты и бланки" data-pl="Sprawozdania i formularze">Звіти та бланки</h2>
     <p data-uk="Тридцять три звіти, зібрані за призначенням: служіння, аналіз, особи та контакти. Серед них офіційні бланки S-21 (картки вісників) і S-88 (звіт про відвідуваність)."
-       data-en="Thirty-three reports, grouped by what they are for: service, analysis, people and contact details. Among them the official S-21 publisher cards and the S-88 attendance report.">
+       data-en="Thirty-three reports, grouped by what they are for: service, analysis, people and contact details. Among them the official S-21 publisher cards and the S-88 attendance report."
+       data-ru="Тридцать три отчёта, сгруппированные по назначению: служение, анализ, лица и контакты. Среди них официальные бланки S-21 (карточки возвещателей) и S-88 (отчёт о посещаемости)."
+       data-pl="Trzydzieści trzy sprawozdania, pogrupowane według przeznaczenia: służba, analiza, osoby i kontakty. Wśród nich oficjalne formularze S-21 (karty głosicieli) i S-88 (sprawozdanie z frekwencji).">
       Тридцять три звіти, зібрані за призначенням: служіння, аналіз, особи та контакти. Серед них офіційні бланки S-21 (картки вісників) і S-88 (звіт про відвідуваність).
     </p>
 
     <figure>
       <img src="help/reports-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/reports-uk.png" data-src-en="help/reports-en.png"
+           data-src-ru="help/reports-ru.png" data-src-pl="help/reports-pl.png"
            alt="">
       <figcaption data-uk="Кожен звіт відкривається з параметрами — місяць, службовий рік або група."
-                  data-en="Each report opens with its parameters — a month, a service year or a group.">Кожен звіт відкривається з параметрами — місяць, службовий рік або група.</figcaption>
+                  data-en="Each report opens with its parameters — a month, a service year or a group."
+                  data-ru="Каждый отчёт открывается с параметрами — месяц, служебный год или группа."
+                  data-pl="Każde sprawozdanie otwiera się z parametrami — miesiąc, rok służbowy albo grupa.">Кожен звіт відкривається з параметрами — місяць, службовий рік або група.</figcaption>
     </figure>
 
     <p style="margin-top:22px"
        data-uk="Готовий звіт можна надрукувати, зберегти в PDF або вивантажити таблицею (CSV чи TSV) для електронних таблиць."
-       data-en="A report can be printed, saved as PDF, or written out as a table (CSV or TSV) for a spreadsheet.">
+       data-en="A report can be printed, saved as PDF, or written out as a table (CSV or TSV) for a spreadsheet."
+       data-ru="Готовый отчёт можно распечатать, сохранить в PDF или выгрузить таблицей (CSV или TSV) для электронных таблиц."
+       data-pl="Gotowe sprawozdanie można wydrukować, zapisać jako PDF albo wyeksportować jako tabelę (CSV lub TSV) do arkusza kalkulacyjnego.">
       Готовий звіт можна надрукувати, зберегти в PDF або вивантажити таблицею (CSV чи TSV) для електронних таблиць.
     </p>
 
     <div class="note">
       <p data-uk="Перед кожним вивантаженням програма нагадує, що у файлі — особисті дані збору, і що поза зашифрованою базою вони більше нічим не захищені. Це нагадування не можна вимкнути."
-         data-en="Before every export the app reminds you that the file holds personal information about the congregation, and that outside the encrypted database nothing protects it any more. That warning cannot be switched off.">
+         data-en="Before every export the app reminds you that the file holds personal information about the congregation, and that outside the encrypted database nothing protects it any more. That warning cannot be switched off."
+         data-ru="Перед каждой выгрузкой программа напоминает, что в файле — личные данные собрания, и что вне зашифрованной базы они больше ничем не защищены. Это напоминание нельзя отключить."
+         data-pl="Przed każdym eksportem program przypomina, że plik zawiera dane osobowe zboru i że poza zaszyfrowaną bazą nic ich już nie chroni. Tego przypomnienia nie można wyłączyć.">
         Перед кожним вивантаженням програма нагадує, що у файлі — особисті дані збору, і що поза зашифрованою базою вони більше нічим не захищені. Це нагадування не можна вимкнути.
       </p>
     </div>
@@ -400,38 +476,48 @@
 
 <section id="backups">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Безпека" data-en="Safety">Безпека</p>
-    <h2 data-uk="Резервні копії" data-en="Backups">Резервні копії</h2>
+    <p class="eyebrow" data-uk="Безпека" data-en="Safety" data-ru="Безопасность" data-pl="Bezpieczeństwo">Безпека</p>
+    <h2 data-uk="Резервні копії" data-en="Backups" data-ru="Резервные копии" data-pl="Kopie zapasowe">Резервні копії</h2>
     <p data-uk="Копія створюється однією кнопкою й шифрується тим самим паролем, що й основний файл. Зберігайте копії на іншому носії — зламаний диск забирає з собою і базу, і копії поруч із нею."
-       data-en="A backup is one button, encrypted with the same passphrase as the live file. Keep copies somewhere else — a failed disk takes the database and any backup sitting next to it.">
+       data-en="A backup is one button, encrypted with the same passphrase as the live file. Keep copies somewhere else — a failed disk takes the database and any backup sitting next to it."
+       data-ru="Копия создаётся одной кнопкой и шифруется тем же паролем, что и основной файл. Храните копии на другом носителе — сломанный диск забирает с собой и базу, и копии рядом с ней."
+       data-pl="Kopię tworzy się jednym przyciskiem, a szyfrowana jest tym samym hasłem co plik główny. Przechowuj kopie na innym nośniku — uszkodzony dysk zabiera ze sobą bazę i wszystkie kopie leżące obok niej.">
       Копія створюється однією кнопкою й шифрується тим самим паролем, що й основний файл. Зберігайте копії на іншому носії — зламаний диск забирає з собою і базу, і копії поруч із нею.
     </p>
 
     <figure>
       <img src="help/backups-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/backups-uk.png" data-src-en="help/backups-en.png"
+           data-src-ru="help/backups-ru.png" data-src-pl="help/backups-pl.png"
            alt="">
       <figcaption data-uk="Список створених копій; відновлення просить пароль тієї копії."
-                  data-en="The list of backups; restoring asks for that backup’s passphrase.">Список створених копій; відновлення просить пароль тієї копії.</figcaption>
+                  data-en="The list of backups; restoring asks for that backup’s passphrase."
+                  data-ru="Список созданных копий; восстановление запрашивает пароль этой копии."
+                  data-pl="Lista utworzonych kopii; przywracanie prosi o hasło tej kopii.">Список створених копій; відновлення просить пароль тієї копії.</figcaption>
     </figure>
   </div>
 </section>
 
 <section id="settings">
   <div class="wrap">
-    <p class="eyebrow" data-uk="Налаштування" data-en="Settings">Налаштування</p>
-    <h2 data-uk="Мова та пароль" data-en="Language and passphrase">Мова та пароль</h2>
-    <p data-uk="Мова інтерфейсу — українська або англійська, змінюється будь-коли. Тут же змінюється пароль бази."
-       data-en="The interface language, Ukrainian or English, switchable at any time. The database passphrase is changed here too.">
-      Мова інтерфейсу — українська або англійська, змінюється будь-коли. Тут же змінюється пароль бази.
+    <p class="eyebrow" data-uk="Налаштування" data-en="Settings" data-ru="Настройки" data-pl="Ustawienia">Налаштування</p>
+    <h2 data-uk="Мова та пароль" data-en="Language and passphrase" data-ru="Язык и пароль" data-pl="Język i hasło">Мова та пароль</h2>
+    <p data-uk="Мова інтерфейсу — українська, англійська, російська або польська, змінюється будь-коли. Тут же змінюється пароль бази."
+       data-en="The interface language — Ukrainian, English, Russian or Polish — switchable at any time. The database passphrase is changed here too."
+       data-ru="Язык интерфейса — украинский, английский, русский или польский, меняется в любой момент. Здесь же меняется пароль базы."
+       data-pl="Język interfejsu — polski, ukraiński, angielski albo rosyjski — można zmienić w każdej chwili. Tu też zmienia się hasło bazy.">
+      Мова інтерфейсу — українська, англійська, російська або польська, змінюється будь-коли. Тут же змінюється пароль бази.
     </p>
 
     <figure>
       <img src="help/settings-uk.png" width="2720" height="1800" loading="lazy" decoding="async"
            data-src-uk="help/settings-uk.png" data-src-en="help/settings-en.png"
+           data-src-ru="help/settings-ru.png" data-src-pl="help/settings-pl.png"
            alt="">
       <figcaption data-uk="Зміна пароля перешифровує файл; стару копію старий пароль і відкриває."
-                  data-en="Changing the passphrase re-encrypts the file; an older backup still opens with the older passphrase.">Зміна пароля перешифровує файл; стару копію старий пароль і відкриває.</figcaption>
+                  data-en="Changing the passphrase re-encrypts the file; an older backup still opens with the older passphrase."
+                  data-ru="Смена пароля перешифровывает файл; старую копию по-прежнему открывает старый пароль."
+                  data-pl="Zmiana hasła ponownie szyfruje plik; starą kopię nadal otwiera stare hasło.">Зміна пароля перешифровує файл; стару копію старий пароль і відкриває.</figcaption>
     </figure>
   </div>
 </section>
@@ -439,21 +525,24 @@
 <footer>
   <div class="wrap">
     <p data-uk="Не знайшли відповіді? Напишіть на GitHub — тільки не додавайте до звернення справжніх даних збору."
-       data-en="Not answered here? Open an issue on GitHub — just do not attach real congregation data to it.">
+       data-en="Not answered here? Open an issue on GitHub — just do not attach real congregation data to it."
+       data-ru="Не нашли ответа? Напишите на GitHub — только не прикладывайте к обращению настоящие данные собрания."
+       data-pl="Nie znalazłeś odpowiedzi? Napisz na GitHubie — tylko nie dołączaj do zgłoszenia prawdziwych danych zboru.">
       Не знайшли відповіді? Напишіть на GitHub — тільки не додавайте до звернення справжніх даних збору.
     </p>
     <p><a href="https://github.com/isalo/sekretar-app/issues"
-          data-uk="Задати питання на GitHub" data-en="Ask on GitHub">Задати питання на GitHub</a></p>
+          data-uk="Задати питання на GitHub" data-en="Ask on GitHub" data-ru="Задать вопрос на GitHub" data-pl="Zapytaj na GitHubie">Задати питання на GitHub</a></p>
   </div>
 </footer>
 
 <script>
 (function () {
+  var LANGS = ['uk', 'en', 'ru', 'pl'];
   var lang = 'uk';
   // The same key the download page uses, so the choice survives the jump
   // between the two pages.
   try { lang = localStorage.getItem('sekretar-lang') || 'uk'; } catch (e) {}
-  if (lang !== 'en') lang = 'uk';
+  if (LANGS.indexOf(lang) === -1) lang = 'uk';
 
   function applyLang(next) {
     lang = next;
@@ -465,8 +554,8 @@
       if (text !== null) nodes[i].textContent = text;
     }
 
-    // Screenshots exist in both languages; swapping the source is the whole
-    // point of having captured them twice.
+    // Screenshots exist in every language; swapping the source is the whole
+    // point of having captured them four times over.
     var shots = document.querySelectorAll('img[data-src-uk][data-src-en]');
     for (var j = 0; j < shots.length; j++) {
       var src = shots[j].getAttribute('data-src-' + next);

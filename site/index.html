@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://sekretar.cykor.net/">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="pl_PL">
 <style>
   :root {
     --deep: #1f5670;
@@ -170,13 +172,15 @@
   <div class="wrap">
     <a class="brand" href="#top"><img src="icon.svg" alt=""><span>Секретар</span></a>
     <nav>
-      <a href="#how" data-uk="Як користуватися" data-en="How to use">Як користуватися</a>
-      <a href="/help" data-uk="Довідка" data-en="Help">Довідка</a>
-      <a href="#new" data-uk="Що нового" data-en="What's new">Що нового</a>
+      <a href="#how" data-uk="Як користуватися" data-en="How to use" data-ru="Как пользоваться" data-pl="Jak korzystać">Як користуватися</a>
+      <a href="/help" data-uk="Довідка" data-en="Help" data-ru="Справка" data-pl="Pomoc">Довідка</a>
+      <a href="#new" data-uk="Що нового" data-en="What's new" data-ru="Что нового" data-pl="Co nowego">Що нового</a>
       <a href="https://github.com/isalo/sekretar-app">GitHub</a>
       <span class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="uk" aria-pressed="true">УКР</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">РУС</button>
+        <button type="button" data-lang="pl" aria-pressed="false">PL</button>
       </span>
     </nav>
   </div>
@@ -186,17 +190,19 @@
 
   <section class="hero">
     <div class="wrap">
-      <h1 data-uk="Секретар" data-en="Sekretar">Секретар</h1>
+      <h1 data-uk="Секретар" data-en="Sekretar" data-ru="Секретар" data-pl="Sekretar">Секретар</h1>
       <p class="tagline"
          data-uk="Записи та звіти служіння для збору. Уся інформація зберігається зашифрованою в одному файлі на вашому комп'ютері — без хмари, без облікового запису, без інтернету."
-         data-en="Congregation service records and reports. Everything lives encrypted in a single file on your own computer — no cloud, no account, no internet.">Записи та звіти служіння для збору. Уся інформація зберігається зашифрованою в одному файлі на вашому комп'ютері — без хмари, без облікового запису, без інтернету.</p>
+         data-en="Congregation service records and reports. Everything lives encrypted in a single file on your own computer — no cloud, no account, no internet."
+         data-ru="Записи и отчёты о служении собрания. Вся информация хранится зашифрованной в одном файле на вашем компьютере — без облака, без учётной записи, без интернета."
+         data-pl="Zapisy i sprawozdania służby zboru. Wszystkie informacje są przechowywane w zaszyfrowanej postaci w jednym pliku na twoim komputerze — bez chmury, bez konta, bez internetu.">Записи та звіти служіння для збору. Уся інформація зберігається зашифрованою в одному файлі на вашому комп'ютері — без хмари, без облікового запису, без інтернету.</p>
 
       <div class="pills">
-        <span class="pill" data-uk="macOS, Windows, Linux" data-en="macOS, Windows, Linux">macOS, Windows, Linux</span>
-        <span class="pill" data-uk="Працює повністю офлайн" data-en="Fully offline">Працює повністю офлайн</span>
-        <span class="pill" data-uk="Зашифрована база" data-en="Encrypted database">Зашифрована база</span>
-        <span class="pill" data-uk="Імпорт з TSWIN" data-en="Imports from TSWIN">Імпорт з TSWIN</span>
-        <span class="pill" data-uk="Українська та англійська" data-en="Ukrainian and English">Українська та англійська</span>
+        <span class="pill" data-uk="macOS, Windows, Linux" data-en="macOS, Windows, Linux" data-ru="macOS, Windows, Linux" data-pl="macOS, Windows, Linux">macOS, Windows, Linux</span>
+        <span class="pill" data-uk="Працює повністю офлайн" data-en="Fully offline" data-ru="Работает полностью офлайн" data-pl="Działa całkowicie offline">Працює повністю офлайн</span>
+        <span class="pill" data-uk="Зашифрована база" data-en="Encrypted database" data-ru="Зашифрованная база" data-pl="Zaszyfrowana baza">Зашифрована база</span>
+        <span class="pill" data-uk="Імпорт з TSWIN" data-en="Imports from TSWIN" data-ru="Импорт из TSWIN" data-pl="Import z TSWIN">Імпорт з TSWIN</span>
+        <span class="pill" data-uk="Чотири мови інтерфейсу" data-en="Four interface languages" data-ru="Четыре языка интерфейса" data-pl="Cztery języki interfejsu">Чотири мови інтерфейсу</span>
       </div>
 
       <div class="download">
@@ -204,10 +210,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
           </svg>
-          <span id="primary-label" data-uk="Завантажити" data-en="Download">Завантажити</span>
+          <span id="primary-label" data-uk="Завантажити" data-en="Download" data-ru="Скачать" data-pl="Pobierz">Завантажити</span>
         </a>
         <span class="release-line" id="release-line"
-              data-uk="Перевіряємо останній випуск…" data-en="Checking the latest release…">Перевіряємо останній випуск…</span>
+              data-uk="Перевіряємо останній випуск…" data-en="Checking the latest release…" data-ru="Проверяем последний выпуск…" data-pl="Sprawdzamy najnowsze wydanie…">Перевіряємо останній випуск…</span>
       </div>
 
       <div class="others" id="others"></div>
@@ -216,39 +222,53 @@
 
   <section id="what">
     <div class="wrap">
-      <p class="eyebrow" data-uk="Що це" data-en="What it is">Що це</p>
+      <p class="eyebrow" data-uk="Що це" data-en="What it is" data-ru="Что это" data-pl="Co to jest">Що це</p>
       <h2 data-uk="Усі записи збору — в одній програмі, на будь-якій системі"
-          data-en="Every congregation record in one app, on any system">Усі записи збору — в одній програмі, на будь-якій системі</h2>
+          data-en="Every congregation record in one app, on any system"
+          data-ru="Все записи собрания — в одной программе, на любой системе"
+          data-pl="Wszystkie zapisy zboru — w jednym programie, na dowolnym systemie">Усі записи збору — в одній програмі, на будь-якій системі</h2>
       <div class="cards">
         <div class="card">
-          <h3 data-uk="Вісники та групи" data-en="Publishers and groups">Вісники та групи</h3>
+          <h3 data-uk="Вісники та групи" data-en="Publishers and groups" data-ru="Возвещатели и группы" data-pl="Głosiciele i grupy">Вісники та групи</h3>
           <p data-uk="Картки вісника збору, групи служіння, призначення та родинні зв'язки. Кожна зміна має дату, тому переведення в іншу групу не стирає історію."
-             data-en="Person records, field service groups, appointments and family links. Every change is dated, so moving someone to another group does not erase the history.">Картки вісника збору, групи служіння, призначення та родинні зв'язки. Кожна зміна має дату, тому переведення в іншу групу не стирає історію.</p>
+             data-en="Person records, field service groups, appointments and family links. Every change is dated, so moving someone to another group does not erase the history."
+             data-ru="Карточки возвещателей собрания, группы территориального служения, назначения и семейные связи. Каждое изменение имеет дату, поэтому перевод в другую группу не стирает историю."
+             data-pl="Karty głosicieli zboru, grupy służby terenowej, mianowania i więzi rodzinne. Każda zmiana ma datę, więc przeniesienie do innej grupy nie kasuje historii.">Картки вісника збору, групи служіння, призначення та родинні зв'язки. Кожна зміна має дату, тому переведення в іншу групу не стирає історію.</p>
         </div>
         <div class="card">
-          <h3 data-uk="Звіти за місяць" data-en="Monthly reports">Звіти за місяць</h3>
+          <h3 data-uk="Звіти за місяць" data-en="Monthly reports" data-ru="Отчёты за месяц" data-pl="Sprawozdania miesięczne">Звіти за місяць</h3>
           <p data-uk="Внесення звітів і відвідування зустрічей за місяць, з підсумками за службовий рік — з 1 вересня до 31 серпня."
-             data-en="Monthly publisher reports and meeting attendance, totalled over the service year — 1 September to 31 August.">Внесення звітів і відвідування зустрічей за місяць, з підсумками за службовий рік — з 1 вересня до 31 серпня.</p>
+             data-en="Monthly publisher reports and meeting attendance, totalled over the service year — 1 September to 31 August."
+             data-ru="Внесение отчётов и посещаемости встреч за месяц, с итогами за служебный год — с 1 сентября по 31 августа."
+             data-pl="Wprowadzanie sprawozdań i frekwencji na zebraniach za miesiąc, z podsumowaniem roku służbowego — od 1 września do 31 sierpnia.">Внесення звітів і відвідування зустрічей за місяць, з підсумками за службовий рік — з 1 вересня до 31 серпня.</p>
         </div>
         <div class="card">
-          <h3 data-uk="33 звіти і бланки" data-en="33 reports and forms">33 звіти і бланки</h3>
+          <h3 data-uk="33 звіти і бланки" data-en="33 reports and forms" data-ru="33 отчёта и бланка" data-pl="33 sprawozdania i formularze">33 звіти і бланки</h3>
           <p data-uk="Перегляд на екрані, друк, PDF, CSV і TSV. Офіційні бланки S-21 і S-88 друкуються так, як виглядають на папері."
-             data-en="On-screen preview, printing, PDF, CSV and TSV. The official S-21 and S-88 forms print the way they look on paper.">Перегляд на екрані, друк, PDF, CSV і TSV. Офіційні бланки S-21 і S-88 друкуються так, як виглядають на папері.</p>
+             data-en="On-screen preview, printing, PDF, CSV and TSV. The official S-21 and S-88 forms print the way they look on paper."
+             data-ru="Просмотр на экране, печать, PDF, CSV и TSV. Официальные бланки S-21 и S-88 печатаются так, как выглядят на бумаге."
+             data-pl="Podgląd na ekranie, druk, PDF, CSV i TSV. Oficjalne formularze S-21 i S-88 drukują się tak, jak wyglądają na papierze.">Перегляд на екрані, друк, PDF, CSV і TSV. Офіційні бланки S-21 і S-88 друкуються так, як виглядають на папері.</p>
         </div>
         <div class="card">
-          <h3 data-uk="Імпорт з TSWIN" data-en="TSWIN import">Імпорт з TSWIN</h3>
+          <h3 data-uk="Імпорт з TSWIN" data-en="TSWIN import" data-ru="Импорт из TSWIN" data-pl="Import z TSWIN">Імпорт з TSWIN</h3>
           <p data-uk="Місячний CSV і XML-експорт. Програма показує, що саме буде записано, і лише потім записує — однією операцією."
-             data-en="The monthly CSV and the XML export. You see exactly what will be written before anything is written, and then it lands in one operation.">Місячний CSV і XML-експорт. Програма показує, що саме буде записано, і лише потім записує — однією операцією.</p>
+             data-en="The monthly CSV and the XML export. You see exactly what will be written before anything is written, and then it lands in one operation."
+             data-ru="Месячный CSV и XML-экспорт. Программа показывает, что именно будет записано, и лишь потом записывает — одной операцией."
+             data-pl="Miesięczny CSV i eksport XML. Program pokazuje, co dokładnie zostanie zapisane, i dopiero potem zapisuje — jedną operacją.">Місячний CSV і XML-експорт. Програма показує, що саме буде записано, і лише потім записує — однією операцією.</p>
         </div>
         <div class="card">
-          <h3 data-uk="Резервні копії" data-en="Backups">Резервні копії</h3>
+          <h3 data-uk="Резервні копії" data-en="Backups" data-ru="Резервные копии" data-pl="Kopie zapasowe">Резервні копії</h3>
           <p data-uk="Копія зашифрована тим самим ключем, що й основний файл. Відновлення не чіпає робочу базу, поки пароль не відкриє копію."
-             data-en="A backup carries the same encryption as the live file. A restore does not touch your database until the passphrase has opened the backup.">Копія зашифрована тим самим ключем, що й основний файл. Відновлення не чіпає робочу базу, поки пароль не відкриє копію.</p>
+             data-en="A backup carries the same encryption as the live file. A restore does not touch your database until the passphrase has opened the backup."
+             data-ru="Копия зашифрована тем же ключом, что и основной файл. Восстановление не трогает рабочую базу, пока пароль не откроет копию."
+             data-pl="Kopia jest zaszyfrowana tym samym kluczem co plik główny. Przywracanie nie dotyka bieżącej bazy, dopóki hasło nie otworzy kopii.">Копія зашифрована тим самим ключем, що й основний файл. Відновлення не чіпає робочу базу, поки пароль не відкриє копію.</p>
         </div>
         <div class="card">
-          <h3 data-uk="Пароль знає лише секретар" data-en="Only you hold the passphrase">Пароль знає лише секретар</h3>
+          <h3 data-uk="Пароль знає лише секретар" data-en="Only you hold the passphrase" data-ru="Пароль знает только секретарь" data-pl="Hasło zna tylko sekretarz">Пароль знає лише секретар</h3>
           <p data-uk="Пароль ніде не зберігається і не може бути відновлений. Це і є захист — і це означає, що втрачений пароль означає втрачену базу."
-             data-en="The passphrase is never stored and cannot be recovered. That is the protection — and it means a lost passphrase is a lost database.">Пароль ніде не зберігається і не може бути відновлений. Це і є захист — і це означає, що втрачений пароль означає втрачену базу.</p>
+             data-en="The passphrase is never stored and cannot be recovered. That is the protection — and it means a lost passphrase is a lost database."
+             data-ru="Пароль нигде не хранится и не может быть восстановлен. Это и есть защита — и это значит, что утраченный пароль означает утраченную базу."
+             data-pl="Hasło nigdzie nie jest przechowywane i nie można go odzyskać. To właśnie jest ochrona — i oznacza to, że utracone hasło to utracona baza.">Пароль ніде не зберігається і не може бути відновлений. Це і є захист — і це означає, що втрачений пароль означає втрачену базу.</p>
         </div>
       </div>
     </div>
@@ -256,71 +276,87 @@
 
   <section id="how">
     <div class="wrap">
-      <p class="eyebrow" data-uk="Як користуватися" data-en="How to use">Як користуватися</p>
-      <h2 data-uk="Від завантаження до першого звіту" data-en="From download to your first report">Від завантаження до першого звіту</h2>
+      <p class="eyebrow" data-uk="Як користуватися" data-en="How to use" data-ru="Как пользоваться" data-pl="Jak korzystać">Як користуватися</p>
+      <h2 data-uk="Від завантаження до першого звіту" data-en="From download to your first report" data-ru="От загрузки до первого отчёта" data-pl="Od pobrania do pierwszego sprawozdania">Від завантаження до першого звіту</h2>
 
       <ol class="steps">
         <li>
-          <h3 data-uk="Установіть програму" data-en="Install the app">Установіть програму</h3>
+          <h3 data-uk="Установіть програму" data-en="Install the app" data-ru="Установите программу" data-pl="Zainstaluj program">Установіть програму</h3>
           <p data-uk="Завантажте файл для своєї системи вище. На Windows запустіть інсталятор, на macOS перетягніть програму в «Програми», на Linux зробіть файл AppImage виконуваним або встановіть пакет .deb."
-             data-en="Download the file for your system above. On Windows run the installer, on macOS drag the app into Applications, on Linux make the AppImage executable or install the .deb package.">Завантажте файл для своєї системи вище. На Windows запустіть інсталятор, на macOS перетягніть програму в «Програми», на Linux зробіть файл AppImage виконуваним або встановіть пакет .deb.</p>
+             data-en="Download the file for your system above. On Windows run the installer, on macOS drag the app into Applications, on Linux make the AppImage executable or install the .deb package."
+             data-ru="Скачайте файл для своей системы выше. На Windows запустите инсталлятор, на macOS перетащите программу в «Программы», на Linux сделайте файл AppImage исполняемым или установите пакет .deb."
+             data-pl="Pobierz plik dla swojego systemu powyżej. W Windows uruchom instalator, w macOS przeciągnij program do „Programy”, w Linuksie nadaj plikowi AppImage uprawnienia wykonywalne albo zainstaluj pakiet .deb.">Завантажте файл для своєї системи вище. На Windows запустіть інсталятор, на macOS перетягніть програму в «Програми», на Linux зробіть файл AppImage виконуваним або встановіть пакет .deb.</p>
         </li>
         <li>
-          <h3 data-uk="Створіть базу даних і пароль" data-en="Create the database and a passphrase">Створіть базу даних і пароль</h3>
+          <h3 data-uk="Створіть базу даних і пароль" data-en="Create the database and a passphrase" data-ru="Создайте базу данных и пароль" data-pl="Utwórz bazę danych i hasło">Створіть базу даних і пароль</h3>
           <p data-uk="При першому запуску виберіть «Створити базу даних», вкажіть, де зберігати файл, і задайте пароль щонайменше з 8 символів. Запишіть його там, де зберігаєте інші важливі документи: відновити його неможливо."
-             data-en="On first launch choose “Create database”, pick where the file should live and set a passphrase of at least 8 characters. Write it down where you keep other important documents — it cannot be recovered.">При першому запуску виберіть «Створити базу даних», вкажіть, де зберігати файл, і задайте пароль щонайменше з 8 символів. Запишіть його там, де зберігаєте інші важливі документи: відновити його неможливо.</p>
+             data-en="On first launch choose “Create database”, pick where the file should live and set a passphrase of at least 8 characters. Write it down where you keep other important documents — it cannot be recovered."
+             data-ru="При первом запуске выберите «Создать базу данных», укажите, где хранить файл, и задайте пароль не менее 8 символов. Запишите его там же, где храните другие важные документы: восстановить его невозможно."
+             data-pl="Przy pierwszym uruchomieniu wybierz „Utwórz bazę danych”, wskaż, gdzie ma być przechowywany plik, i ustaw hasło o długości co najmniej 8 znaków. Zapisz je tam, gdzie przechowujesz inne ważne dokumenty — nie da się go odzyskać.">При першому запуску виберіть «Створити базу даних», вкажіть, де зберігати файл, і задайте пароль щонайменше з 8 символів. Запишіть його там, де зберігаєте інші важливі документи: відновити його неможливо.</p>
         </li>
         <li>
-          <h3 data-uk="Перенесіть дані з TSWIN" data-en="Bring your TSWIN data across">Перенесіть дані з TSWIN</h3>
+          <h3 data-uk="Перенесіть дані з TSWIN" data-en="Bring your TSWIN data across" data-ru="Перенесите данные из TSWIN" data-pl="Przenieś dane z TSWIN">Перенесіть дані з TSWIN</h3>
           <p data-uk="Відкрийте «Імпорт» і виберіть XML-експорт або місячний CSV з TSWIN. Програма розбере файл, покаже збіги, конфлікти та підсумки — і запише лише після вашого підтвердження."
-             data-en="Open “Imports” and pick a TSWIN XML export or a monthly CSV. The file is parsed, matches and conflicts are shown with the totals, and nothing is written until you confirm.">Відкрийте «Імпорт» і виберіть XML-експорт або місячний CSV з TSWIN. Програма розбере файл, покаже збіги, конфлікти та підсумки — і запише лише після вашого підтвердження.</p>
+             data-en="Open “Imports” and pick a TSWIN XML export or a monthly CSV. The file is parsed, matches and conflicts are shown with the totals, and nothing is written until you confirm."
+             data-ru="Откройте «Импорт» и выберите XML-экспорт или месячный CSV из TSWIN. Программа разберёт файл, покажет совпадения, конфликты и итоги — и запишет только после вашего подтверждения."
+             data-pl="Otwórz „Import” i wybierz eksport XML albo miesięczny CSV z TSWIN. Program przeanalizuje plik, pokaże dopasowania, konflikty i podsumowanie — i zapisze dopiero po twoim potwierdzeniu.">Відкрийте «Імпорт» і виберіть XML-експорт або місячний CSV з TSWIN. Програма розбере файл, покаже збіги, конфлікти та підсумки — і запише лише після вашого підтвердження.</p>
         </li>
         <li>
-          <h3 data-uk="Ведіть місяць" data-en="Work the month">Ведіть місяць</h3>
+          <h3 data-uk="Ведіть місяць" data-en="Work the month" data-ru="Ведите месяц" data-pl="Prowadź miesiąc">Ведіть місяць</h3>
           <p data-uk="Протягом місяця вносьте відвідування зустрічей і звіти вісників. Підсумки за групами та за службовим роком рахуються самі."
-             data-en="Through the month, enter meeting attendance and publisher reports. Group and service-year totals follow on their own.">Протягом місяця вносьте відвідування зустрічей і звіти публікаційників. Підсумки за групами та за службовим роком рахуються самі.</p>
+             data-en="Through the month, enter meeting attendance and publisher reports. Group and service-year totals follow on their own."
+             data-ru="В течение месяца вносите посещаемость встреч и отчёты возвещателей. Итоги по группам и за служебный год считаются сами."
+             data-pl="W ciągu miesiąca wprowadzaj frekwencję na zebraniach i sprawozdania głosicieli. Podsumowania grup i roku służbowego liczą się same.">Протягом місяця вносьте відвідування зустрічей і звіти вісників. Підсумки за групами та за службовим роком рахуються самі.</p>
         </li>
         <li>
-          <h3 data-uk="Друкуйте звіти та робіть копії" data-en="Print reports and take backups">Друкуйте звіти та робіть копії</h3>
+          <h3 data-uk="Друкуйте звіти та робіть копії" data-en="Print reports and take backups" data-ru="Печатайте отчёты и делайте копии" data-pl="Drukuj sprawozdania i rób kopie">Друкуйте звіти та робіть копії</h3>
           <p data-uk="У розділі «Звіти» виберіть потрібний звіт, період — і друкуйте, зберігайте в PDF або вивантажуйте в CSV. Час від часу створюйте резервну копію та тримайте її окремо від комп'ютера."
-             data-en="In “Reports” choose the report and the period, then print it, save a PDF or export CSV. Take a backup now and then and keep it somewhere other than the computer itself.">У розділі «Звіти» виберіть потрібний звіт, період — і друкуйте, зберігайте в PDF або вивантажуйте в CSV. Час від часу створюйте резервну копію та тримайте її окремо від комп'ютера.</p>
+             data-en="In “Reports” choose the report and the period, then print it, save a PDF or export CSV. Take a backup now and then and keep it somewhere other than the computer itself."
+             data-ru="В разделе «Отчёты» выберите нужный отчёт, период — и печатайте, сохраняйте в PDF или выгружайте в CSV. Время от времени создавайте резервную копию и храните её отдельно от компьютера."
+             data-pl="W sekcji „Sprawozdania” wybierz potrzebne sprawozdanie, okres — i drukuj, zapisuj jako PDF albo eksportuj do CSV. Co jakiś czas rób kopię zapasową i przechowuj ją osobno od komputera.">У розділі «Звіти» виберіть потрібний звіт, період — і друкуйте, зберігайте в PDF або вивантажуйте в CSV. Час від часу створюйте резервну копію та тримайте її окремо від комп'ютера.</p>
         </li>
       </ol>
 
       <div class="note">
-        <h3 data-uk="macOS: підписано та нотаризовано" data-en="macOS: signed and notarized">macOS: підписано та нотаризовано</h3>
+        <h3 data-uk="macOS: підписано та нотаризовано" data-en="macOS: signed and notarized" data-ru="macOS: подписано и нотариально заверено" data-pl="macOS: podpisane i notaryzowane">macOS: підписано та нотаризовано</h3>
         <p data-uk="Збірки для macOS підписані сертифікатом Apple Developer ID і пройшли нотаризацію, тому відкриваються звичайним подвійним клацанням — без попереджень і без обхідних дій."
-           data-en="The macOS builds are signed with an Apple Developer ID and notarized, so they open with a normal double-click — no warnings and nothing to work around.">Збірки для macOS підписані сертифікатом Apple Developer ID і пройшли нотаризацію, тому відкриваються звичайним подвійним клацанням — без попереджень і без обхідних дій.</p>
+           data-en="The macOS builds are signed with an Apple Developer ID and notarized, so they open with a normal double-click — no warnings and nothing to work around."
+           data-ru="Сборки для macOS подписаны сертификатом Apple Developer ID и прошли нотаризацию, поэтому открываются обычным двойным щелчком — без предупреждений и без обходных путей."
+           data-pl="Kompilacje dla macOS są podpisane certyfikatem Apple Developer ID i przeszły notaryzację, dlatego otwierają się zwykłym dwukliknięciem — bez ostrzeżeń i bez obejść.">Збірки для macOS підписані сертифікатом Apple Developer ID і пройшли нотаризацію, тому відкриваються звичайним подвійним клацанням — без попереджень і без обхідних дій.</p>
       </div>
 
       <div class="note">
-        <h3 data-uk="Windows: попередження SmartScreen" data-en="Windows: the SmartScreen warning">Windows: попередження SmartScreen</h3>
+        <h3 data-uk="Windows: попередження SmartScreen" data-en="Windows: the SmartScreen warning" data-ru="Windows: предупреждение SmartScreen" data-pl="Windows: ostrzeżenie SmartScreen">Windows: попередження SmartScreen</h3>
         <p data-uk="Інсталятор для Windows поки не підписаний, тому Windows покаже синє вікно. Натисніть «Докладніше» → «Виконати в будь-якому разі»."
-           data-en="The Windows installer is not signed yet, so Windows shows a blue dialog. Choose “More info” → “Run anyway”.">Інсталятор для Windows поки не підписаний, тому Windows покаже синє вікно. Натисніть «Докладніше» → «Виконати в будь-якому разі».</p>
+           data-en="The Windows installer is not signed yet, so Windows shows a blue dialog. Choose “More info” → “Run anyway”."
+           data-ru="Инсталлятор для Windows пока не подписан, поэтому Windows покажет синее окно. Нажмите «Подробнее» → «Выполнить в любом случае»."
+           data-pl="Instalator dla Windows nie jest jeszcze podpisany, dlatego Windows pokaże niebieskie okno. Kliknij „Więcej informacji” → „Uruchom mimo to”.">Інсталятор для Windows поки не підписаний, тому Windows покаже синє вікно. Натисніть «Докладніше» → «Виконати в будь-якому разі».</p>
       </div>
 
       <div class="note">
-        <h3 data-uk="Куди дівається ваша інформація" data-en="Where your data goes">Куди дівається ваша інформація</h3>
+        <h3 data-uk="Куди дівається ваша інформація" data-en="Where your data goes" data-ru="Куда девается ваша информация" data-pl="Gdzie trafiają twoje dane">Куди дівається ваша інформація</h3>
         <p data-uk="Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це."
-           data-en="Nowhere. The app has no network access; data leaves the encrypted file only when you export a CSV or a PDF yourself — and it warns you before every export.">Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це.</p>
+           data-en="Nowhere. The app has no network access; data leaves the encrypted file only when you export a CSV or a PDF yourself — and it warns you before every export."
+           data-ru="Никуда. Программа не имеет сетевого доступа; данные покидают зашифрованный файл только тогда, когда вы сами экспортируете CSV или PDF — и перед каждым таким экспортом программа предупреждает об этом."
+           data-pl="Nigdzie. Program nie ma dostępu do sieci; dane opuszczają zaszyfrowany plik tylko wtedy, gdy sam eksportujesz CSV albo PDF — i przed każdym takim eksportem program o tym ostrzega.">Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це.</p>
       </div>
     </div>
   </section>
 
   <section id="new">
     <div class="wrap">
-      <p class="eyebrow" data-uk="Що нового" data-en="What's new">Що нового</p>
-      <h2 data-uk="Останній випуск" data-en="The latest release">Останній випуск</h2>
+      <p class="eyebrow" data-uk="Що нового" data-en="What's new" data-ru="Что нового" data-pl="Co nowego">Що нового</p>
+      <h2 data-uk="Останній випуск" data-en="The latest release" data-ru="Последний выпуск" data-pl="Najnowsze wydanie">Останній випуск</h2>
       <div class="news" id="news">
         <header>
-          <h3 id="news-version" data-uk="Завантажуємо…" data-en="Loading…">Завантажуємо…</h3>
+          <h3 id="news-version" data-uk="Завантажуємо…" data-en="Loading…" data-ru="Загружаем…" data-pl="Wczytujemy…">Завантажуємо…</h3>
           <time id="news-date"></time>
         </header>
         <div class="news-body" id="news-body"></div>
       </div>
       <p style="margin-top:16px;font-size:14px">
         <a href="https://github.com/isalo/sekretar-app/releases"
-           data-uk="Усі випуски та їхні зміни →" data-en="All releases and their changes →">Усі випуски та їхні зміни →</a>
+           data-uk="Усі випуски та їхні зміни →" data-en="All releases and their changes →" data-ru="Все выпуски и их изменения →" data-pl="Wszystkie wydania i ich zmiany →">Усі випуски та їхні зміни →</a>
       </p>
     </div>
   </section>
@@ -330,10 +366,14 @@
 <footer>
   <div class="wrap">
     <p data-uk="Секретар — безкоштовна програма для збору."
-       data-en="Sekretar is free to use for congregation service.">Секретар — безкоштовна програма для збору.</p>
-    <p><a href="https://github.com/isalo/sekretar-app" data-uk="Завантаження та документація на GitHub" data-en="Downloads and documentation on GitHub">Завантаження та документація на GitHub</a></p>
+       data-en="Sekretar is free to use for congregation service."
+       data-ru="Секретар — бесплатная программа для собрания."
+       data-pl="Sekretar to bezpłatny program dla zboru.">Секретар — безкоштовна програма для збору.</p>
+    <p><a href="https://github.com/isalo/sekretar-app" data-uk="Завантаження та документація на GitHub" data-en="Downloads and documentation on GitHub" data-ru="Загрузки и документация на GitHub" data-pl="Pobieranie i dokumentacja na GitHubie">Завантаження та документація на GitHub</a></p>
     <p data-uk="Ця сторінка не збирає статистику і не встановлює файли cookie."
-       data-en="This page collects no analytics and sets no cookies.">Ця сторінка не збирає статистику і не встановлює файли cookie.</p>
+       data-en="This page collects no analytics and sets no cookies."
+       data-ru="Эта страница не собирает статистику и не устанавливает файлы cookie."
+       data-pl="Ta strona nie zbiera statystyk i nie ustawia plików cookie.">Ця сторінка не збирає статистику і не встановлює файли cookie.</p>
   </div>
 </footer>
 
@@ -343,10 +383,12 @@
   var RELEASES = 'https://github.com/' + REPO + '/releases';
 
   /* ---- language ---------------------------------------------------- */
+  var LANGS = ['uk', 'en', 'ru', 'pl'];
+  var DATE_LOCALES = { uk: 'uk-UA', en: 'en-GB', ru: 'ru-RU', pl: 'pl-PL' };
   var lang = 'uk';
   var render = function () {};  // replaced once the release section is wired up
   try { lang = localStorage.getItem('sekretar-lang') || 'uk'; } catch (e) {}
-  if (lang !== 'en') lang = 'uk';
+  if (LANGS.indexOf(lang) === -1) lang = 'uk';
 
   function applyLang(next) {
     lang = next;
@@ -370,21 +412,24 @@
   });
   applyLang(lang);
 
-  function t(uk, en) { return lang === 'en' ? en : uk; }
+  function t(uk, en, ru, pl) {
+    var byLang = { uk: uk, en: en, ru: ru, pl: pl };
+    return byLang[lang] != null ? byLang[lang] : uk;
+  }
 
   /* ---- which platform is this ------------------------------------- */
   // Asset names come from electron-builder's artifactName:
   // Sekretar-<version>-<os>-<arch>.<ext>
   var PLATFORMS = [
-    { id: 'mac-arm', uk: 'macOS (Apple Silicon)', en: 'macOS (Apple Silicon)',
+    { id: 'mac-arm', uk: 'macOS (Apple Silicon)', en: 'macOS (Apple Silicon)', ru: 'macOS (Apple Silicon)', pl: 'macOS (Apple Silicon)',
       match: function (n) { return /mac/.test(n) && /arm64/.test(n) && /\.dmg$/.test(n); } },
-    { id: 'mac-x64', uk: 'macOS (Intel)', en: 'macOS (Intel)',
+    { id: 'mac-x64', uk: 'macOS (Intel)', en: 'macOS (Intel)', ru: 'macOS (Intel)', pl: 'macOS (Intel)',
       match: function (n) { return /mac/.test(n) && /x64/.test(n) && /\.dmg$/.test(n); } },
-    { id: 'win', uk: 'Windows', en: 'Windows',
+    { id: 'win', uk: 'Windows', en: 'Windows', ru: 'Windows', pl: 'Windows',
       match: function (n) { return /\.exe$/.test(n); } },
-    { id: 'linux-appimage', uk: 'Linux (AppImage)', en: 'Linux (AppImage)',
+    { id: 'linux-appimage', uk: 'Linux (AppImage)', en: 'Linux (AppImage)', ru: 'Linux (AppImage)', pl: 'Linux (AppImage)',
       match: function (n) { return /\.appimage$/.test(n); } },
-    { id: 'linux-deb', uk: 'Linux (.deb)', en: 'Linux (.deb)',
+    { id: 'linux-deb', uk: 'Linux (.deb)', en: 'Linux (.deb)', ru: 'Linux (.deb)', pl: 'Linux (.deb)',
       match: function (n) { return /\.deb$/.test(n); } }
   ];
 
@@ -461,10 +506,10 @@
   var others = document.getElementById('others');
   var state = null;  // { release, assets by platform id } once the API answers
 
-  function label(platform) { return platform[lang === 'en' ? 'en' : 'uk']; }
+  function label(platform) { return platform[lang] != null ? platform[lang] : platform.uk; }
 
   function formatDate(iso) {
-    return new Date(iso).toLocaleDateString(lang === 'en' ? 'en-GB' : 'uk-UA',
+    return new Date(iso).toLocaleDateString(DATE_LOCALES[lang] || DATE_LOCALES.uk,
       { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
@@ -475,16 +520,16 @@
     var mine = state.mine;
     var version = release.tag_name || release.name || '';
 
-    releaseLine.textContent = t('Версія ', 'Version ') + version +
+    releaseLine.textContent = t('Версія ', 'Version ', 'Версия ', 'Wersja ') + version +
       (release.published_at ? ' · ' + formatDate(release.published_at) : '');
 
     var chosen = mine && found[mine];
     if (chosen) {
       primary.href = chosen.asset.browser_download_url;
-      primaryLabel.textContent = t('Завантажити для ', 'Download for ') + label(chosen.platform);
+      primaryLabel.textContent = t('Завантажити для ', 'Download for ', 'Скачать для ', 'Pobierz dla ') + label(chosen.platform);
     } else {
       primary.href = RELEASES;
-      primaryLabel.textContent = t('Усі завантаження', 'All downloads');
+      primaryLabel.textContent = t('Усі завантаження', 'All downloads', 'Все загрузки', 'Wszystkie pobrania');
     }
 
     others.textContent = '';
@@ -511,20 +556,26 @@
       time.textContent = formatDate(release.published_at);
     }
     document.getElementById('news-body').innerHTML =
-      markdown(release.body) || '<p>' + t('Опис не додано.', 'No notes were written for this release.') + '</p>';
+      markdown(release.body) || '<p>' + t('Опис не додано.', 'No notes were written for this release.',
+        'Описание не добавлено.', 'Nie dodano opisu.') + '</p>';
   }
 
   function renderMissing() {
     releaseLine.textContent = state && state.error
-      ? t('Не вдалося отримати останній випуск.', 'Could not read the latest release.')
-      : t('Випусків ще немає.', 'No releases yet.');
+      ? t('Не вдалося отримати останній випуск.', 'Could not read the latest release.',
+          'Не удалось получить последний выпуск.', 'Nie udało się pobrać najnowszego wydania.')
+      : t('Випусків ще немає.', 'No releases yet.', 'Выпусков пока нет.', 'Nie ma jeszcze wydań.');
     primary.href = RELEASES;
-    primaryLabel.textContent = t('Відкрити сторінку випусків', 'Open the releases page');
+    primaryLabel.textContent = t('Відкрити сторінку випусків', 'Open the releases page',
+      'Открыть страницу выпусков', 'Otwórz stronę wydań');
     others.textContent = '';
-    document.getElementById('news-version').textContent = t('Випусків ще немає', 'No releases yet');
+    document.getElementById('news-version').textContent =
+      t('Випусків ще немає', 'No releases yet', 'Выпусков пока нет', 'Nie ma jeszcze wydań');
     document.getElementById('news-body').innerHTML =
       '<p>' + t('Щойно вийде перша збірка, вона з’явиться тут разом зі списком змін.',
-                'As soon as the first build is published it will appear here with its list of changes.') + '</p>';
+                'As soon as the first build is published it will appear here with its list of changes.',
+                'Как только выйдет первая сборка, она появится здесь вместе со списком изменений.',
+                'Gdy tylko ukaże się pierwsza wersja, pojawi się tutaj razem z listą zmian.') + '</p>';
   }
 
   render = function () { if (state && state.release) renderRelease(); else if (state) renderMissing(); };
