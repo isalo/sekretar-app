@@ -1,0 +1,90 @@
+name: Bug report
+description: Something in the app does not work the way it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please do not include real congregation data** — no names, addresses, report
+        figures, database files, backups or screenshots containing them. Describe the shape
+        of the problem instead, or reproduce it with invented names. Never post your
+        passphrase; it is not needed to diagnose anything and cannot be recovered if it
+        leaks.
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: The version shown in the app, or the release you installed it from.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: Operating system version
+      placeholder: "macOS 15.2 · Windows 11 23H2 · Ubuntu 24.04"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what the app did instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps, starting from opening the app.
+      placeholder: |
+        1. Open the database
+        2. Go to …
+        3. …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - It happened once
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message
+      description: Quote it in full, but replace anything identifying with `…`.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: This report contains no real congregation data and no passphrase.
+          required: true
+        - label: I am using the latest release, or I have said above why I cannot be.
+          required: true

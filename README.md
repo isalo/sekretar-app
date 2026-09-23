@@ -55,5 +55,10 @@ is developed privately and is not published; see [`LICENSE`](LICENSE) — the ap
 charge, but it is not open source.
 
 Found a problem or have a question? Open an
-[issue](https://github.com/isalo/sekretar-app/issues). Please do not attach real
-congregation data to it.
+[issue](https://github.com/isalo/sekretar-app/issues/new/choose). Please do not attach real
+congregation data to it — no names, no report figures, no database files.
+[`CONTRIBUTING.md`](CONTRIBUTING.md) explains what is useful to include and what can be
+changed here; [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) covers how we talk to each other.
+
+Security problems go through [`SECURITY.md`](SECURITY.md) instead — privately, never as a
+public issue.

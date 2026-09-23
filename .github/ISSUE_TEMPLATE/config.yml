@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Help pages
+    url: https://sekretar.cykor.net/help
+    about: Installing, importing from TSWIN, backups and every report are documented here. Worth a look before opening an issue.
+  - name: Downloads and releases
+    url: https://github.com/isalo/sekretar-app/releases/latest
+    about: The newest build for macOS, Windows and Linux, with its release notes and SHA256SUMS.
+  - name: Report a security vulnerability
+    url: https://github.com/isalo/sekretar-app/security/advisories/new
+    about: Privately, never as a public issue. See SECURITY.md.

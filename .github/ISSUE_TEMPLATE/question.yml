@@ -1,0 +1,39 @@
+name: Question
+description: Ask how something works, or report unclear documentation.
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The [help pages](https://sekretar.cykor.net/help) cover installing, importing from
+        TSWIN, backups and every report. If the answer is not there, ask here — a question
+        that had to be asked usually means the documentation needs a fix, and both get
+        handled together.
+
+        **Please do not include real congregation data** in the question.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: If the question is about the app rather than the documentation.
+      placeholder: "0.1.0"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I looked through the help pages first.
+          required: true
+        - label: This question contains no real congregation data and no passphrase.
+          required: true

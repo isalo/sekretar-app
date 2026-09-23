@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest something the app should be able to do.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the record-keeping problem rather than the button you have in mind — the
+        underlying task is the part worth discussing, and there is often a form or a report
+        that already covers it.
+
+        Sekretar stays offline, accountless and single-file by design, so anything needing a
+        server, a sync service or a shared database is out of scope.
+
+        **Please do not include real congregation data** in the examples.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what makes it awkward today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: How you handle it now
+      description: The workaround you use today, or the part of the app that almost does it.
+    validations:
+      required: false
