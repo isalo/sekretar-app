@@ -5,6 +5,53 @@ GitHub and the "What's new" section on the landing page, so write it for the per
 the app, not for the person who wrote the commit. From 0.1.1 the notes are published in
 Ukrainian and English, so both sections are kept here in step.
 
+## 0.1.4 — 2026-10-06
+
+### Українською
+
+- Нова окрема програма для наглядачів груп — «Звіти групи». У «Звітах за місяць» →
+  «Наглядачі груп» секретар створює файл звіту для наглядача групи, наглядач відкриває
+  його у «Звітах групи», вносить звіти своєї групи в одній таблиці й зберігає файл для
+  секретаря. Секретар імпортує його назад і бачить кожен новий звіт поруч із наявним —
+  як у TSWIN — і сам вибирає, що прийняти.
+- У файл для наглядача потрапляють лише імена вісників групи, їхнє піонерське служіння і
+  вже подані звіти — без адрес, телефонів, дат і приміток. За бажанням файл можна
+  захистити паролем; тоді він зашифрований, і звіти повертаються під тим самим паролем.
+- Повернутий файл приймає лише та база даних, у якій його створено, і лише для вісників,
+  які були в ньому. Звіти за закритий місяць не імпортуються.
+- Години звітують лише піонери — але тільки починаючи зі звіту за листопад 2023 року.
+  Звіти за давніші місяці зберігають і показують години всіх вісників. Одна година, якою
+  TSWIN позначав участь вісника, тепер зараховується як участь, а не як година, і вже
+  імпортовані звіти виправлено.
+- Зміна статусу записується як подія з датою: перейшов в інший збір, помер, вилучений зі
+  збору, відрікся від збору, став неактивним — і шлях назад. Картка S-21 показує, що
+  сталося і коли.
+- Запис можна стерти назавжди. Ім'я, контакти та примітки видаляються, а підсумки місяців,
+  уже надісланих до філіалу, не змінюються.
+
+### English
+
+- A separate new app for group overseers — Group Reports. From Monthly reporting → Group
+  overseers the secretary creates a report file for the group overseer; the overseer
+  opens it in Group Reports, enters the group's reports in a single table and saves a
+  file for the secretary. Imported back, each incoming report is shown beside the one
+  already held — the way TSWIN did it — and the secretary picks what to take.
+- The overseer's file carries only the group's publishers' names, their pioneer standing
+  and the reports already handed in — no addresses, phones, dates or notes. It can be
+  protected with a password, which encrypts it, and the reports come back under the same
+  password.
+- A returned file is accepted only by the database that created it, and only for the
+  publishers who were on it. Reports for a closed month are not imported.
+- Only pioneers report hours — but only from the November 2023 report on. Earlier months
+  keep and show every publisher's hours. The single hour TSWIN used to mark a publisher's
+  participation now counts as participation rather than as an hour, and reports already
+  imported have been corrected.
+- A change of status is recorded as a dated event: moved to another congregation, died,
+  removed from the congregation, disassociated, became inactive — and the way back. The
+  S-21 card shows what happened and when.
+- A record can be erased for good. The name, contacts and notes are removed, while the
+  totals of months already sent to the branch stay as they were.
+
 ## 0.1.3 — 2026-09-23
 
 ### Українською

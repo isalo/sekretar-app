@@ -14,14 +14,19 @@ Downloads and overview: **[sekretar.cykor.net](https://sekretar.cykor.net)**
 ---
 
 Every congregation record lives in one encrypted SQLite file on your own machine — no
-account, no sync, no network access at all. The interface is available in Ukrainian and
-English.
+account, no sync, no network access at all. The interface is available in Ukrainian,
+English, Russian and Polish.
 
 **[Download the latest release](https://github.com/isalo/sekretar-app/releases/latest)**
 for macOS, Windows or Linux.
 
 Coming from TSWIN? The monthly CSV and the XML export both import, staged and previewed
 so you see what will change before anything is written.
+
+Group overseers get a small companion app of their own, **Group Reports** (Звіти групи).
+The secretary creates a report file for the group overseer, the overseer enters the group's
+reports in one table and sends the file back, and the secretary imports it — the way TSWIN
+did it, without a server or an account.
 
 The record file belongs to you. It is never sent anywhere, and nobody — the author
 included — can read it or recover a lost passphrase.
@@ -36,6 +41,8 @@ an Apple Developer ID and notarized, so they open normally.
 
 **Linux** — the `.AppImage` runs after `chmod +x`; the `.deb` installs with
 `sudo apt install ./Sekretar-*.deb`.
+
+Group Reports installs the same way from the `SekretarGroup-*` files of the same release.
 
 Every release carries a `SHA256SUMS` file. To check a download before opening it:
 

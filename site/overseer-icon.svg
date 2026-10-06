@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="ov-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f8f63"/>
+      <stop offset="1" stop-color="#1d5c40"/>
+    </linearGradient>
+    <linearGradient id="ov-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef5f1"/>
+    </linearGradient>
+  </defs>
+
+  <g>
+    <rect width="1024" height="1024" rx="228" fill="url(#ov-bg)"/>
+
+    <!-- the group's sheet: a box and a line per publisher -->
+    <g transform="translate(0,-14)">
+      <rect x="236" y="196" width="552" height="632" rx="44" fill="url(#ov-card)"/>
+      <rect x="236" y="196" width="552" height="112" rx="44" fill="#d6e8de"/>
+      <rect x="236" y="264" width="552" height="44" fill="#d6e8de"/>
+      <g fill="#2f8f63">
+        <rect x="300" y="366" width="46" height="46" rx="10"/>
+        <rect x="300" y="460" width="46" height="46" rx="10"/>
+      </g>
+      <g fill="none" stroke="#9fbcae" stroke-width="8">
+        <rect x="304" y="558" width="38" height="38" rx="8"/>
+        <rect x="304" y="652" width="38" height="38" rx="8"/>
+      </g>
+      <g fill="#9fbcae">
+        <rect x="380" y="372" width="260" height="34" rx="17"/>
+        <rect x="380" y="466" width="340" height="34" rx="17"/>
+        <rect x="380" y="560" width="300" height="34" rx="17"/>
+        <rect x="380" y="654" width="200" height="34" rx="17"/>
+      </g>
+    </g>
+
+    <!-- the group -->
+    <circle cx="742" cy="742" r="176" fill="#1d5c40"/>
+    <circle cx="742" cy="742" r="176" fill="none" stroke="#ffffff" stroke-width="34"/>
+    <g fill="#ffffff" transform="translate(742 742) scale(0.82) translate(-742 -742)">
+      <circle cx="668" cy="704" r="38"/>
+      <path d="M598 824 a70 64 0 0 1 140 0 z"/>
+      <circle cx="816" cy="704" r="38"/>
+      <path d="M746 824 a70 64 0 0 1 140 0 z"/>
+      <circle cx="742" cy="690" r="50" stroke="#1d5c40" stroke-width="16"/>
+      <path d="M646 846 a96 86 0 0 1 192 0 z" stroke="#1d5c40" stroke-width="16"/>
+    </g>
+  </g>
+</svg>

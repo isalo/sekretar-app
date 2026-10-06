@@ -151,6 +151,17 @@
     border-radius: 6px; padding: 1px 5px;
   }
 
+  /* The group overseer's app */
+  .app-title { display: flex; align-items: center; gap: 14px; }
+  .app-title img { width: 48px; height: 48px; border-radius: 11px; flex: none; }
+  .lead { margin-top: 14px; max-width: 40em; }
+  .btn.green { background: #1d5c40; }
+  .btn.green:hover { background: #2f8f63; }
+  @media (prefers-color-scheme: dark) {
+    .btn.green { background: #7fc39b; }
+    .btn.green:hover { background: #9fd4b4; }
+  }
+
   /* What's new */
   .news { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-top: 24px; }
   .news header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -172,6 +183,7 @@
   <div class="wrap">
     <a class="brand" href="#top"><img src="icon.svg" alt=""><span>Секретар</span></a>
     <nav>
+      <a href="#overseer" data-uk="Наглядачам груп" data-en="Group overseers" data-ru="Надзирателям групп" data-pl="Nadzorcy grup">Наглядачам груп</a>
       <a href="#how" data-uk="Як користуватися" data-en="How to use" data-ru="Как пользоваться" data-pl="Jak korzystać">Як користуватися</a>
       <a href="/help" data-uk="Довідка" data-en="Help" data-ru="Справка" data-pl="Pomoc">Довідка</a>
       <a href="#new" data-uk="Що нового" data-en="What's new" data-ru="Что нового" data-pl="Co nowego">Що нового</a>
@@ -274,6 +286,66 @@
     </div>
   </section>
 
+  <section id="overseer">
+    <div class="wrap">
+      <p class="eyebrow" data-uk="Для наглядачів груп" data-en="For group overseers" data-ru="Для надзирателей групп" data-pl="Dla nadzorców grup">Для наглядачів груп</p>
+      <div class="app-title">
+        <img src="overseer-icon.svg" alt="">
+        <h2 data-uk="Звіти групи — окрема програма для наглядача групи"
+            data-en="Group Reports — a separate app for the group overseer"
+            data-ru="Отчёты группы — отдельная программа для надзирателя группы"
+            data-pl="Sprawozdania grupy — osobny program dla nadzorcy grupy">Звіти групи — окрема програма для наглядача групи</h2>
+      </div>
+      <p class="lead"
+         data-uk="Як колись у TSWIN: секретар передає наглядачеві групи файл звіту, наглядач вносить звіти своєї групи й повертає файл, а секретар імпортує його. Програма маленька, має одне вікно з таблицею і так само працює без інтернету."
+         data-en="The way TSWIN once did it: the secretary hands the group overseer a report file, the overseer enters the group’s reports and sends the file back, and the secretary imports it. The app is small, has one window with one table, and works without the internet just the same."
+         data-ru="Как когда-то в TSWIN: секретарь передаёт надзирателю группы файл отчёта, надзиратель вносит отчёты своей группы и возвращает файл, а секретарь импортирует его. Программа маленькая, у неё одно окно с таблицей, и она так же работает без интернета."
+         data-pl="Tak jak kiedyś w TSWIN: sekretarz przekazuje nadzorcy grupy plik sprawozdania, nadzorca wpisuje sprawozdania swojej grupy i odsyła plik, a sekretarz go importuje. Program jest mały, ma jedno okno z tabelą i tak samo działa bez internetu.">Як колись у TSWIN: секретар передає наглядачеві групи файл звіту, наглядач вносить звіти своєї групи й повертає файл, а секретар імпортує його. Програма маленька, має одне вікно з таблицею і так само працює без інтернету.</p>
+
+      <ol class="steps">
+        <li>
+          <h3 data-uk="Секретар створює файл звіту" data-en="The secretary creates the report file" data-ru="Секретарь создаёт файл отчёта" data-pl="Sekretarz tworzy plik sprawozdania">Секретар створює файл звіту</h3>
+          <p data-uk="У Секретарі: «Звіти за місяць» → «Наглядачі груп» → «Створити файл звіту для наглядача групи». У файл потрапляють лише імена вісників групи та вже подані звіти. За бажанням файл можна захистити паролем."
+             data-en="In Sekretar: Monthly reporting → Group overseers → Create a report file for the group overseer. Only the group’s publishers’ names and the reports already in go into it. It can be protected with a password."
+             data-ru="В Секретаре: «Отчёты за месяц» → «Надзиратели групп» → «Создать файл отчёта для надзирателя группы». В файл попадают только имена возвещателей группы и уже сданные отчёты. По желанию файл можно защитить паролем."
+             data-pl="W Sekretarzu: „Sprawozdania miesięczne” → „Nadzorcy grup” → „Utwórz plik sprawozdania dla nadzorcy grupy”. Do pliku trafiają tylko imiona głosicieli grupy i już złożone sprawozdania. Plik można zabezpieczyć hasłem.">У Секретарі: «Звіти за місяць» → «Наглядачі груп» → «Створити файл звіту для наглядача групи». У файл потрапляють лише імена вісників групи та вже подані звіти. За бажанням файл можна захистити паролем.</p>
+        </li>
+        <li>
+          <h3 data-uk="Наглядач вносить звіти" data-en="The overseer enters the reports" data-ru="Надзиратель вносит отчёты" data-pl="Nadzorca wpisuje sprawozdania">Наглядач вносить звіти</h3>
+          <p data-uk="Наглядач відкриває файл у «Звітах групи» подвійним клацанням, позначає участь, біблійні вивчення, допоміжне піонерське служіння, години піонерів і примітки — і натискає «Зберегти для секретаря». Файл .skreport можна відкрити знову й дописати."
+             data-en="The overseer opens the file in Group Reports with a double click, marks participation, Bible studies, auxiliary pioneer service, pioneers’ hours and remarks, then presses “Save for the secretary”. The .skreport file can be reopened and finished later."
+             data-ru="Надзиратель открывает файл в «Отчётах группы» двойным щелчком, отмечает участие, изучения Библии, подсобное пионерское служение, часы пионеров и примечания — и нажимает «Сохранить для секретаря». Файл .skreport можно открыть снова и дописать."
+             data-pl="Nadzorca otwiera plik w „Sprawozdaniach grupy” dwukrotnym kliknięciem, zaznacza udział, studia biblijne, pomocniczą służbę pionierską, godziny pionierów i uwagi — i klika „Zapisz dla sekretarza”. Plik .skreport można otworzyć ponownie i dokończyć.">Наглядач відкриває файл у «Звітах групи» подвійним клацанням, позначає участь, біблійні вивчення, допоміжне піонерське служіння, години піонерів і примітки — і натискає «Зберегти для секретаря». Файл .skreport можна відкрити знову й дописати.</p>
+        </li>
+        <li>
+          <h3 data-uk="Секретар імпортує звіти" data-en="The secretary imports the reports" data-ru="Секретарь импортирует отчёты" data-pl="Sekretarz importuje sprawozdania">Секретар імпортує звіти</h3>
+          <p data-uk="«Наглядачі груп» → «Імпорт звітів від наглядача групи». Кожен новий звіт видно поруч із наявним, і секретар сам вибирає, що прийняти. Файл приймає лише та база, у якій його створено."
+             data-en="Group overseers → Import reports from a group overseer. Each incoming report is shown beside the one already held, and the secretary picks what to take. A file is accepted only by the database that created it."
+             data-ru="«Надзиратели групп» → «Импорт отчётов от надзирателя группы». Каждый новый отчёт виден рядом с имеющимся, и секретарь сам выбирает, что принять. Файл принимает только та база, в которой его создали."
+             data-pl="„Nadzorcy grup” → „Importuj sprawozdania od nadzorcy grupy”. Każde nowe sprawozdanie widać obok obecnego, a sekretarz sam wybiera, co przyjąć. Plik przyjmuje tylko baza, w której go utworzono.">«Наглядачі груп» → «Імпорт звітів від наглядача групи». Кожен новий звіт видно поруч із наявним, і секретар сам вибирає, що прийняти. Файл приймає лише та база, у якій його створено.</p>
+        </li>
+      </ol>
+
+      <div class="download">
+        <a class="btn green" id="overseer-download" href="https://github.com/isalo/sekretar-app/releases" aria-disabled="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
+          </svg>
+          <span id="overseer-label" data-uk="Завантажити «Звіти групи»" data-en="Download Group Reports" data-ru="Скачать «Отчёты группы»" data-pl="Pobierz „Sprawozdania grupy”">Завантажити «Звіти групи»</span>
+        </a>
+      </div>
+      <div class="others" id="overseer-others"></div>
+
+      <div class="note">
+        <h3 data-uk="Пароль — за бажанням" data-en="A password if you want one" data-ru="Пароль — по желанию" data-pl="Hasło — według uznania">Пароль — за бажанням</h3>
+        <p data-uk="Без пароля файл лише стиснено: у текстовому редакторі чи в пошті його не прочитати, але він не зашифрований. З паролем файл зашифровано, і наглядач повертає звіти під тим самим паролем. Повідомте його усно, а не в тому ж листі, що й файл."
+           data-en="Without a password the file is only compressed: a text editor or a mail preview cannot read it, but it is not encrypted. With one the file is encrypted, and the overseer’s reports come back under the same password. Tell it in person, not in the message that carries the file."
+           data-ru="Без пароля файл только сжат: в текстовом редакторе или в почте его не прочитать, но он не зашифрован. С паролем файл зашифрован, и надзиратель возвращает отчёты под тем же паролем. Сообщите его устно, а не в том же письме, что и файл."
+           data-pl="Bez hasła plik jest tylko skompresowany: w edytorze tekstu ani w poczcie go nie przeczytasz, ale nie jest zaszyfrowany. Z hasłem plik jest zaszyfrowany, a nadzorca odsyła sprawozdania pod tym samym hasłem. Przekaż je osobiście, nie w tej samej wiadomości co plik.">Без пароля файл лише стиснено: у текстовому редакторі чи в пошті його не прочитати, але він не зашифрований. З паролем файл зашифровано, і наглядач повертає звіти під тим самим паролем. Повідомте його усно, а не в тому ж листі, що й файл.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="how">
     <div class="wrap">
       <p class="eyebrow" data-uk="Як користуватися" data-en="How to use" data-ru="Как пользоваться" data-pl="Jak korzystać">Як користуватися</p>
@@ -335,10 +407,10 @@
 
       <div class="note">
         <h3 data-uk="Куди дівається ваша інформація" data-en="Where your data goes" data-ru="Куда девается ваша информация" data-pl="Gdzie trafiają twoje dane">Куди дівається ваша інформація</h3>
-        <p data-uk="Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це."
-           data-en="Nowhere. The app has no network access; data leaves the encrypted file only when you export a CSV or a PDF yourself — and it warns you before every export."
-           data-ru="Никуда. Программа не имеет сетевого доступа; данные покидают зашифрованный файл только тогда, когда вы сами экспортируете CSV или PDF — и перед каждым таким экспортом программа предупреждает об этом."
-           data-pl="Nigdzie. Program nie ma dostępu do sieci; dane opuszczają zaszyfrowany plik tylko wtedy, gdy sam eksportujesz CSV albo PDF — i przed każdym takim eksportem program o tym ostrzega.">Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV чи PDF — і перед кожним таким експортом програма попереджає про це.</p>
+        <p data-uk="Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV, PDF чи файл звіту для наглядача групи — і перед кожним таким експортом програма попереджає про це."
+           data-en="Nowhere. The app has no network access; data leaves the encrypted file only when you export a CSV, a PDF or a group overseer’s report file yourself — and it warns you before every export."
+           data-ru="Никуда. Программа не имеет сетевого доступа; данные покидают зашифрованный файл только тогда, когда вы сами экспортируете CSV, PDF или файл отчёта для надзирателя группы — и перед каждым таким экспортом программа предупреждает об этом."
+           data-pl="Nigdzie. Program nie ma dostępu do sieci; dane opuszczają zaszyfrowany plik tylko wtedy, gdy sam eksportujesz CSV, PDF albo plik sprawozdania dla nadzorcy grupy — i przed każdym takim eksportem program o tym ostrzega.">Нікуди. Програма не має мережевого доступу; дані виходять із зашифрованого файлу лише тоді, коли ви самі експортуєте CSV, PDF чи файл звіту для наглядача групи — і перед кожним таким експортом програма попереджає про це.</p>
       </div>
     </div>
   </section>
@@ -419,7 +491,11 @@
 
   /* ---- which platform is this ------------------------------------- */
   // Asset names come from electron-builder's artifactName:
-  // Sekretar-<version>-<os>-<arch>.<ext>
+  // Sekretar-<version>-<os>-<arch>.<ext> for Sekretar, and
+  // SekretarGroup-<version>-<os>-<arch>.<ext> for the group overseer's app.
+  // The platform rules look only at the end of the name, so each app's assets
+  // are told apart by their start first.
+  var APPS = { main: /^sekretar-/, overseer: /^sekretargroup-/ };
   var PLATFORMS = [
     { id: 'mac-arm', uk: 'macOS (Apple Silicon)', en: 'macOS (Apple Silicon)', ru: 'macOS (Apple Silicon)', pl: 'macOS (Apple Silicon)',
       match: function (n) { return /mac/.test(n) && /arm64/.test(n) && /\.dmg$/.test(n); } },
@@ -513,26 +589,23 @@
       { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
-  function renderRelease() {
-    if (!state) return;
-    var release = state.release;
-    var found = state.found;
-    var mine = state.mine;
-    var version = release.tag_name || release.name || '';
+  var overseerButton = document.getElementById('overseer-download');
+  var overseerLabel = document.getElementById('overseer-label');
+  var overseerOthers = document.getElementById('overseer-others');
 
-    releaseLine.textContent = t('Версія ', 'Version ', 'Версия ', 'Wersja ') + version +
-      (release.published_at ? ' · ' + formatDate(release.published_at) : '');
-
+  /** One app's download button and its list of the other platforms. */
+  function renderDownloads(found, mine, button, buttonLabel, list, appName) {
     var chosen = mine && found[mine];
     if (chosen) {
-      primary.href = chosen.asset.browser_download_url;
-      primaryLabel.textContent = t('Завантажити для ', 'Download for ', 'Скачать для ', 'Pobierz dla ') + label(chosen.platform);
+      button.href = chosen.asset.browser_download_url;
+      buttonLabel.textContent = t('Завантажити ', 'Download ', 'Скачать ', 'Pobierz ') +
+        (appName ? appName + ' ' : '') + t('для ', 'for ', 'для ', 'dla ') + label(chosen.platform);
     } else {
-      primary.href = RELEASES;
-      primaryLabel.textContent = t('Усі завантаження', 'All downloads', 'Все загрузки', 'Wszystkie pobrania');
+      button.href = RELEASES;
+      buttonLabel.textContent = t('Усі завантаження', 'All downloads', 'Все загрузки', 'Wszystkie pobrania');
     }
 
-    others.textContent = '';
+    list.textContent = '';
     PLATFORMS.forEach(function (platform) {
       var entry = found[platform.id];
       if (!entry || platform.id === mine) return;
@@ -546,8 +619,21 @@
       bytes.textContent = size(entry.asset.size);
       link.appendChild(name);
       link.appendChild(bytes);
-      others.appendChild(link);
+      list.appendChild(link);
     });
+  }
+
+  function renderRelease() {
+    if (!state) return;
+    var release = state.release;
+    var version = release.tag_name || release.name || '';
+
+    releaseLine.textContent = t('Версія ', 'Version ', 'Версия ', 'Wersja ') + version +
+      (release.published_at ? ' · ' + formatDate(release.published_at) : '');
+
+    renderDownloads(state.found, state.mine, primary, primaryLabel, others, '');
+    renderDownloads(state.overseer, state.mine, overseerButton, overseerLabel, overseerOthers,
+      t('«Звіти групи»', 'Group Reports', '«Отчёты группы»', '„Sprawozdania grupy”'));
 
     document.getElementById('news-version').textContent = version;
     var time = document.getElementById('news-date');
@@ -569,6 +655,8 @@
     primaryLabel.textContent = t('Відкрити сторінку випусків', 'Open the releases page',
       'Открыть страницу выпусков', 'Otwórz stronę wydań');
     others.textContent = '';
+    overseerButton.href = RELEASES;
+    overseerOthers.textContent = '';
     document.getElementById('news-version').textContent =
       t('Випусків ще немає', 'No releases yet', 'Выпусков пока нет', 'Nie ma jeszcze wydań');
     document.getElementById('news-body').innerHTML =
@@ -589,16 +677,22 @@
     })
     .then(function (release) {
       var assets = release.assets || [];
-      var found = {};
-      PLATFORMS.forEach(function (platform) {
-        for (var i = 0; i < assets.length; i++) {
-          if (platform.match(assets[i].name.toLowerCase())) {
-            found[platform.id] = { platform: platform, asset: assets[i] };
-            return;
+      function pick(app) {
+        var found = {};
+        PLATFORMS.forEach(function (platform) {
+          for (var i = 0; i < assets.length; i++) {
+            var name = assets[i].name.toLowerCase();
+            if (app.test(name) && platform.match(name)) {
+              found[platform.id] = { platform: platform, asset: assets[i] };
+              return;
+            }
           }
-        }
-      });
-      state = { release: release, found: found, mine: detect() };
+        });
+        return found;
+      }
+      // A release from before the overseer's app simply has none of its files,
+      // and its button falls back to the releases page.
+      state = { release: release, found: pick(APPS.main), overseer: pick(APPS.overseer), mine: detect() };
       render();
     })
     .catch(function () {
